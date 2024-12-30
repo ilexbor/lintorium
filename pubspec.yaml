@@ -1,8 +1,7 @@
 name: lintorium
 
 description: >
-  The strictest linting rules for Dart code.
-  Every rule is manually configured. 
+  The strictest linting rules for Dart code. 
   Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
 repository: https://github.com/ilexbor/lintorium
