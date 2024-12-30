@@ -1,4 +1,4 @@
-name: 'lintorium'
+name: lintorium
 
 description: >
   The strictest linting rules for Dart code.
@@ -6,6 +6,7 @@ description: >
   Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
 repository: https://github.com/ilexbor/lintorium
+
 issue_tracker: https://github.com/ilexbor/lintorium/issues
 
 license: 'BSD-3-Clause'
@@ -29,6 +30,4 @@ topics:
   - analysis
   - analyzer
   - code-style
-
-publish_to: 'none'
 
