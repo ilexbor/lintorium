@@ -1,0 +1,12 @@
+name: lintorium_example
+
+version: '0.1.0'
+
+dev_dependencies:
+  lintorium:
+    path: ..
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+publish_to: none

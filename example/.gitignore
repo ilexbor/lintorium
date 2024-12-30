@@ -1,0 +1,23 @@
+##
+## Dart
+##
+
+build/
+
+##
+## macOS
+##
+
+.DS_Store
+
+##
+## Pub
+##
+
+.dart_tool/
+.packages
+
+##
+## Project
+##
+
