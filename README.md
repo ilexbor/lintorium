@@ -51,7 +51,7 @@ flutter analyze
 
 ### Excluding files and directories
 
-You can exclude specific files or directories from analysis by using the `analyzer: exclude` section in your `analysis_options.yaml` file.
+You can exclude specific files or directories from analysis by using the `analyzer > exclude` section in your `analysis_options.yaml` file.
 This is useful for automatically generated files.
 
 Example:
@@ -103,11 +103,13 @@ For a full list of changes and updates, see the [CHANGELOG.md](CHANGELOG.md).
 
 If you encounter any issues or have suggestions for improvements, please create an issue.
 
-When reporting a bug or requesting a new feature, please provide as much detail as possible to help us understand the problem or idea. Including the following information is highly appreciated:
-- Steps to reproduce the issue (if applicable)
+When reporting a bug or requesting a new feature, please provide as much detail as possible to help understand the problem or idea.
+
+Including the following information is highly appreciated:
+- Steps to reproduce the issue
 - Expected behavior
 - Any error messages or logs
-- Your environment (Dart version, operating system, etc.)
+- Your environment (operating system, Dart version, etc.)
 
 Your feedback is valuable and will help improve the package!
 
