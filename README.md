@@ -14,7 +14,7 @@ Add the package to the `dev_dependencies` in your `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
-  lintorium: ^0.1.0
+  lintorium: ^0.1.1
 ```
 
 Then run the command:
