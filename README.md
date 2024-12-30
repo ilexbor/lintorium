@@ -1,5 +1,4 @@
 ![Version](https://img.shields.io/pub/v/lintorium.svg)
-![Downloads](https://img.shields.io/pub/dt/lintorium.svg)
 ![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
 
 The strictest linting rules for Dart code.
