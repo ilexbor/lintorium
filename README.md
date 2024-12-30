@@ -35,7 +35,7 @@ include: package:lintorium/analysis_options.yaml
 
 Now the Dart analyzer will use the rules from Lintorium.
 
-Issues detected by the analyzer will automatically appear in the interface of Dart-compatible IDEs (https://dart.dev/tools#ides-and-editors).
+Issues detected by the analyzer will automatically appear in the interface of [Dart-compatible IDEs](https://dart.dev/tools#ides-and-editors).
 
 The analyzer can also be run manually from the command line.
 
