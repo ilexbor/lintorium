@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1 style="color:#027DFD; font-family: 'Courier New', 'Courier', monospace; font-weight: 800;">{ Lintorium }</h1>
+<h1 style="color:#027DFD; font-family: 'Courier New', 'Courier', monospace; font-weight: 200;">{ LINTORIUM }</h1>
 
 [![](https://img.shields.io/github/v/release/ilexbor/lintorium?style=for-the-badge&logo=github&color=181717&label=GitHub%20Release)](https://github.com/ilexbor/lintorium)
 [![](https://img.shields.io/pub/v/lintorium.svg?style=for-the-badge&logo=dart&color=0553B1&label=Pub%20Release)](https://pub.dev/packages/lintorium)
