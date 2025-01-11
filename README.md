@@ -13,7 +13,7 @@ Perfect for perfectionists, whether solo developers or entire teams striving for
 
 ## Compatibility
 
-Lintorium requires Dart 3.0.0 or later.
+Lintorium requires Dart 3.4.0 or later.
 
 ## Installation
 
