@@ -187,7 +187,7 @@ For a full list of changes and updates, see the [CHANGELOG.md](CHANGELOG.md).
 
 ## Issues
 
-If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/ilexbor/lintorium/issues/new) on GitHub.
+If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/ilexbor/lintorium/issues/new/choose) on GitHub.
 
 When reporting a bug or requesting a fix, please provide as much detail as possible to help understand the problem or idea.
 
