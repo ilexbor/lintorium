@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the project maintainer responsible for enforcement at
-inbox@ilexbor.dev.
+[inbox@ilexbor.dev](mailto:inbox@ilexbor.dev).
 All complaints will be reviewed and investigated promptly and fairly.
 
 The project maintainer is obligated to respect the privacy and security of the
