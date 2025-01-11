@@ -12,10 +12,6 @@
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
-## Compatibility
-
-Lintorium requires `Dart 3.4.0` or later.
-
 ## Installation
 
 1. In a terminal, located at the root of your package, run this command:
@@ -31,6 +27,11 @@ Lintorium requires `Dart 3.4.0` or later.
     ```
    
 Now the Dart analyzer will use the rules from Lintorium.
+
+### Compatibility
+
+Lintorium requires `Dart 3.4.0` or later.
+Fully compatible with both **Dart** and **Flutter** projects.
 
 ## Upgrading to the latest lints
 
@@ -55,7 +56,7 @@ For Flutter projects, use:
 flutter analyze
 ```
 
-## Excluding files and directories
+### Excluding files and directories
 
 You can exclude specific files or directories from analysis by using the `analyzer.exclude` section in your `analysis_options.yaml` file.
 This is useful for automatically generated files.
@@ -72,11 +73,11 @@ analyzer:
 
 For more details, refer to the [official Dart documentation](https://dart.dev/tools/analysis#excluding-files).
 
-## Suppressing Rules
+### Suppressing Rules
 
 Sometimes, you may need to suppress specific linting rules for certain sections of your code. Dart allows you to do this by using comments in your code.
 
-### Suppressing a rule for a specific line
+#### Suppressing a rule for a specific line
 
 You can suppress a rule by adding a comment above the line of code you want to exclude:
 
@@ -85,7 +86,7 @@ You can suppress a rule by adding a comment above the line of code you want to e
 print('This is ignored by the linter');
 ```
 
-### Suppressing multiple rules
+#### Suppressing multiple rules
 
 To suppress multiple rules, list them separated by commas:
 
@@ -94,7 +95,7 @@ To suppress multiple rules, list them separated by commas:
 print(dynamicVariable.callMethod());
 ```
 
-### Ignoring rules for a block of code
+#### Ignoring rules for a block of code
 
 To suppress rules for a block of code, you can use ignore comments around the block:
 
@@ -107,7 +108,7 @@ void someFunction() {
 // Linting resumes here
 ```
 
-### Suppressing rules for an entire file
+#### Suppressing rules for an entire file
 
 To suppress rules for an entire file, add a comment at the top of the file:
 
@@ -120,7 +121,7 @@ import 'dart:io';
 
 For more details, refer to the [official Dart documentation](https://dart.dev/tools/analysis#suppressing-diagnostics-for-a-file).
 
-## Customizing the predefined lint sets
+### Customizing the predefined lint sets
 
 You can also customize the rules manually using the `linter.rules` or `analyzer.errors` sections in your `analysis_options.yaml` file.
 This allows you to enable or disable specific rules to suit your needs.
@@ -155,11 +156,11 @@ analyzer:
 
 For details on customizing static analysis, check out the [official Dart documentation](https://dart.dev/tools/analysis).
 
-## Lintorium Badges
+## Lintorium badges
 
-Show your support for Lintorium and highlight its integration in your project by adding these badges to your README or documentation.
+Use these badges to highlight your project's adherence to Lintorium's high standards of linting and code style.
 
-### Available Badges
+### Available badges
 
 Example:
 
