@@ -212,7 +212,7 @@ This project is licensed under the [BSD-3-Clause License](LICENSE).
 
 <div align="center">
   <h2 style="color:#0553B1;">
-    Developed by <a href="https://github.com/ilexbor" style="text-decoration:none; color:#027DFD;" onmouseover="this.style.color='#0553B1'" onmouseout="this.style.color='#027DFD'">ilexbor</a> with 💙
+    Developed with 💙 by <a href="https://github.com/ilexbor" style="text-decoration:none; color:#027DFD;" onmouseover="this.style.color='#0553B1'" onmouseout="this.style.color='#027DFD'">ilexbor</a>
   </h2>
 </div>
 
