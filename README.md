@@ -1,17 +1,21 @@
+<div align="center">
+
 ![](https://img.shields.io/github/v/release/ilexbor/lintorium?style=for-the-badge&logo=github&color=181717&label=GitHub)
 ![](https://img.shields.io/github/downloads/ilexbor/lintorium/total?style=for-the-badge&logo=github&color=181717&label=GitHub)
-![](https://img.shields.io/github/stars/ilexbor/lintorium?style=for-the-badge&logo=github&color=042B59&label=GitHub%20stars)  
+![](https://img.shields.io/github/stars/ilexbor/lintorium?style=for-the-badge&logo=github&color=E15D45&label=GitHub%20stars)  
 ![](https://img.shields.io/pub/v/lintorium.svg?style=for-the-badge&logo=dart&color=0553B1&label=pub%20version)
 ![](https://img.shields.io/pub/dm/lintorium?style=for-the-badge&logo=dart&color=0553B1&label=pub%20downloads)
 ![](https://img.shields.io/pub/likes/lintorium?style=for-the-badge&logo=dart&color=0553B1&label=pub%20likes)  
 ![](https://img.shields.io/github/license/ilexbor/lintorium?style=for-the-badge&color=042B59&label=license)
+
+</div>
 
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
 ## Compatibility
 
-Lintorium requires Dart 3.5.0 or later.
+Lintorium requires Dart 3.0.0 or later.
 
 ## Installation
 
@@ -30,7 +34,7 @@ dart pub get
 
 ## Usage
 
-Create an `analysis_options.yaml` file at the root of your project (next to `pubspec.yaml`) and add the following line:
+Create an `analysis_options.yaml` file in the root directory of your project (next to pubspec.yaml) and add the following line:
 
 ```yaml
 include: package:lintorium/analysis_options.yaml
@@ -54,7 +58,7 @@ flutter analyze
 
 ### Excluding files and directories
 
-You can exclude specific files or directories from analysis by using the `analyzer > exclude` section in your `analysis_options.yaml` file.
+You can exclude specific files or directories from analysis by using the `analyzer.exclude` section in your `analysis_options.yaml` file.
 This is useful for automatically generated files.
 
 Example:
@@ -63,16 +67,18 @@ Example:
 
 analyzer:
   exclude:
+    - "**/generated/**" # Excludes all files in the "generated" directory and its subdirectories
     - "**/*.g.dart" # Excludes all files ending with ".g.dart"
-    - "**/generated/**" # Excludes all files in the "generated" directory
 ```
 
 ### Customizing
 
-You can also customize the rules manually using the `linter > rules` or `analyzer > errors` sections in your `analysis_options.yaml` file.
+You can also customize the rules manually using the `linter.rules` or `analyzer.errors` sections in your `analysis_options.yaml` file.
 This allows you to enable or disable specific rules to suit your needs.
 
-The `linter > rules` section lets you enable or disable specific lint rules.
+For a complete list of all available linting rules, you can refer to the [official Dart documentation](https://dart.dev/tools/linter-rules#rules).
+
+The `linter.rules` section lets you enable or disable specific lint rules.
 
 Example:
 ```yaml
@@ -84,7 +90,7 @@ linter:
     prefer_single_quotes: false # Disables the prefer_single_quotes rule
 ```
 
-The `analyzer > errors` section allows you to specify the processing level for diagnostic messages.
+The `analyzer.errors` section allows you to define the severity level for diagnostic messages reported by the analyzer.
 
 Example:
 ```yaml
@@ -104,9 +110,9 @@ For a full list of changes and updates, see the [CHANGELOG.md](CHANGELOG.md).
 
 ## Issues
 
-If you encounter any issues or have suggestions for improvements, please create an issue.
+If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/ilexbor/lintorium/issues/new) on GitHub.
 
-When reporting a bug or requesting a new feature, please provide as much detail as possible to help understand the problem or idea.
+When reporting a bug or requesting a fix, please provide as much detail as possible to help understand the problem or idea.
 
 Including the following information is highly appreciated:
 - Steps to reproduce the issue
