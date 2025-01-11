@@ -1,5 +1,10 @@
-![Version](https://img.shields.io/pub/v/lintorium.svg)
-![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
+![](https://img.shields.io/github/v/release/ilexbor/lintorium?style=for-the-badge&logo=github&color=181717&label=GitHub)
+![](https://img.shields.io/github/downloads/ilexbor/lintorium/total?style=for-the-badge&logo=github&color=181717&label=GitHub)
+![](https://img.shields.io/github/stars/ilexbor/lintorium?style=for-the-badge&logo=github&color=042B59&label=GitHub%20stars)  
+![](https://img.shields.io/pub/v/lintorium.svg?style=for-the-badge&logo=dart&color=0553B1&label=pub%20version)
+![](https://img.shields.io/pub/dm/lintorium?style=for-the-badge&logo=dart&color=0553B1&label=pub%20downloads)
+![](https://img.shields.io/pub/likes/lintorium?style=for-the-badge&logo=dart&color=0553B1&label=pub%20likes)  
+![](https://img.shields.io/github/license/ilexbor/lintorium?style=for-the-badge&color=042B59&label=license)
 
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
