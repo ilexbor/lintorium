@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability, please email us at [inbox@ilexbor.dev]. Please include as much detail as possible to help us identify and resolve the issue quickly.
+If you discover a security vulnerability, please email us at [inbox@ilexbor.dev](mailto:inbox@ilexbor.dev). Please include as much detail as possible to help us identify and resolve the issue quickly.
 
 We are committed to:
 - Acknowledging receipt of your report within 48 hours.
