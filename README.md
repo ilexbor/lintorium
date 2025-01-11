@@ -1,8 +1,6 @@
 <div align="center">
 
-<h1 style="color:#027DFD; font-family: 'Courier New', 'Courier', monospace; font-weight: 200;">{ Lintorium }</h1>
-
----
+<h1 style="color:#027DFD; font-family: 'Courier New', 'Courier', monospace; font-weight: 800;">{ Lintorium }</h1>
 
 [![](https://img.shields.io/github/v/release/ilexbor/lintorium?style=for-the-badge&logo=github&color=181717&label=GitHub%20Release)](https://github.com/ilexbor/lintorium)
 [![](https://img.shields.io/pub/v/lintorium.svg?style=for-the-badge&logo=dart&color=0553B1&label=Pub%20Release)](https://pub.dev/packages/lintorium)
@@ -212,5 +210,9 @@ This project is licensed under the [BSD-3-Clause License](LICENSE).
 
 ---
 
-Developed with 💙 by [ilexbor](https://github.com/ilexbor)
+<div align="center">
+  <h2 style="color:#0553B1;">
+    Developed by <a href="https://github.com/ilexbor" style="text-decoration:none; color:#027DFD;" onmouseover="this.style.color='#0553B1'" onmouseout="this.style.color='#027DFD'">ilexbor</a> with 💙
+  </h2>
+</div>
 
