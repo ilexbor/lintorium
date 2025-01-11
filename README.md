@@ -12,6 +12,11 @@
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
+## Compatibility
+
+Lintorium requires `Dart 3.4.0` or later.
+Fully compatible with both **Dart** and **Flutter** projects.
+
 ## Installation
 
 1. In a terminal, located at the root of your package, run this command:
@@ -27,11 +32,6 @@ Perfect for perfectionists, whether solo developers or entire teams striving for
     ```
    
 Now the Dart analyzer will use the rules from Lintorium.
-
-### Compatibility
-
-Lintorium requires `Dart 3.4.0` or later.
-Fully compatible with both **Dart** and **Flutter** projects.
 
 ## Upgrading to the latest lints
 
