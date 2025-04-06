@@ -172,7 +172,7 @@ Use these badges to highlight your project's adherence to Lintorium's high stand
 
 Example:
 
-[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)
+[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)  
 [![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)
 
 Markdown:
