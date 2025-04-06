@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk/lib/_internal/js_runtime/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk/lib/_internal/js_runtime/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk/lib/_internal/js_runtime/build" />
       <excludeFolder url="file://$MODULE_DIR$/cli/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/cli/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/cli/build" />
