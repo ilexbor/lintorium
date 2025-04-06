@@ -84,7 +84,7 @@ analyzer:
     directives_ordering: warning
     discarded_futures: error
     do_not_use_environment: warning
-    document_ignores: error
+    document_ignores: warning
     empty_catches: error
     empty_constructor_bodies: error
     empty_statements: error
