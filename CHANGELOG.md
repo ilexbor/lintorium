@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0]
+
+### Added
+- CLI tool for validating the `analysis_options.yaml` file.
+
+### Changed
+- Minimum Dart SDK compatibility updated to `>=3.0.0`.
+
+### Fixed
+- Resolved analyzer warnings that could appear when including `package:lintorium/analysis_options.yaml` in a project.
+
+### Breaking Changes
+- Analyzer diagnostic `private_optional_parameter` is now overridden with severity `ignore`.  
+  This may silence errors that were previously shown in user projects.
+
 ## [0.1.3]
 
 ### Improved
@@ -24,4 +39,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - First release of the package.
-

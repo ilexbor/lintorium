@@ -5,12 +5,6 @@
 build/
 
 ##
-## Dart Version Manager
-##
-
-.dvm/
-
-##
 ## macOS
 ##
 

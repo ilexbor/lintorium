@@ -1,16 +1,20 @@
-name: lintorium
+name: lintorium_cli
 
 version: '1.0.0'
 
 license: 'BSD-3-Clause'
 
-description: >
-  The strictest linting rules for Dart code. 
-  Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
-
 repository: https://github.com/ilexbor/lintorium
 
 issue_tracker: https://github.com/ilexbor/lintorium/issues
+
+dependencies:
+  collection: ^1.18.0
+  yaml: ^3.1.2
+
+dev_dependencies:
+  lintorium:
+    path: '..'
 
 environment:
   sdk: '>=3.0.0'

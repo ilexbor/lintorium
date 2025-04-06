@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dart_analyzer_rules.iml" filepath="$PROJECT_DIR$/.idea/dart_analyzer_rules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lintorium.iml" filepath="$PROJECT_DIR$/.idea/lintorium.iml" />
     </modules>
   </component>
 </project>
