@@ -12,10 +12,14 @@
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
-## Compatibility
+## Compatibility with Dart SDK
 
-Lintorium requires `Dart 3.4.0` or later.
-Fully compatible with both **Dart** and **Flutter** projects.
+Lintorium fully compatible with both **Dart** and **Flutter** projects.
+
+| Dart SDK version | Lintorium version |
+|------------------|-------------------|
+| \>=3.0.0         | ✅ >=1.0.0         |
+| \<3.0.0          | ❌ Not supported   |
 
 ## Installation
 
@@ -65,10 +69,14 @@ Example:
 ```yaml
 # analysis_options.yaml
 
+include: package:lintorium/analysis_options.yaml
+
 analyzer:
   exclude:
     - "**/generated/**" # Excludes all files in the "generated" directory and its subdirectories
+    - "**/*.freezed.dart" # Excludes all files ending with ".freezed.dart"
     - "**/*.g.dart" # Excludes all files ending with ".g.dart"
+    - "**/*.gen.dart" # Excludes all files ending with ".gen.dart"
 ```
 
 For more details, refer to the [official Dart documentation](https://dart.dev/tools/analysis#excluding-files).
@@ -164,16 +172,14 @@ Use these badges to highlight your project's adherence to Lintorium's high stand
 
 Example:
 
-[![](https://img.shields.io/badge/analyzer%20rules-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
-[![](https://img.shields.io/badge/code%20style-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
-[![](https://img.shields.io/badge/lints-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
+[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)
+[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)
 
 Markdown:
 
 ```markdown
-[![](https://img.shields.io/badge/analyzer%20rules-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
-[![](https://img.shields.io/badge/code%20style-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
-[![](https://img.shields.io/badge/lints-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)  
+[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)
+[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)
 ```
 
 ### How to add

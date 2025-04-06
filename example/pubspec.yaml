@@ -1,12 +1,18 @@
 name: lintorium_example
 
-version: '0.1.0'
+version: '1.0.0'
+
+license: 'BSD-3-Clause'
+
+repository: https://github.com/ilexbor/lintorium
+
+issue_tracker: https://github.com/ilexbor/lintorium/issues
 
 dev_dependencies:
   lintorium:
-    path: ..
+    path: '..'
 
 environment:
-  sdk: '>=3.5.0 <4.0.0'
+  sdk: '>=3.0.0'
 
 publish_to: none
