@@ -18,6 +18,7 @@ Lintorium fully compatible with both **Dart** and **Flutter** projects.
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
+| \>=3.7.0         | ✅ >=1.7.0         |
 | \>=3.6.0         | ✅ >=1.6.0         |
 | \>=3.5.0         | ✅ >=1.5.0         |
 | \>=3.4.0         | ✅ >=1.4.0         |
