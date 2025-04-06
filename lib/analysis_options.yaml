@@ -97,7 +97,6 @@ analyzer:
     implementation_imports: error
     implicit_call_tearoffs: error
     implicit_reopen: ignore
-    # invalid_annotation_target: ignore # Incompatible with Dart 3.6.0 # Issue: https://github.com/rrousselGit/freezed/issues/488
     invalid_case_patterns: error
     invalid_runtime_check_with_js_interop_types: error
     join_return_with_assignment: ignore
@@ -127,11 +126,10 @@ analyzer:
     null_closures: error
     omit_local_variable_types: warning # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
     omit_obvious_local_variable_types: warning # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: error # Incompatible with Dart 3.6.0 # Incompatible with rules: always_specify_types
+    omit_obvious_property_types: warning # Experimental # Incompatible with rules: always_specify_types
     one_member_abstracts: ignore
     only_throw_errors: error
     overridden_fields: error
-    package_api_docs: info
     package_names: error
     package_prefixed_library_names: error
     parameter_assignments: error
@@ -188,8 +186,8 @@ analyzer:
     sort_pub_dependencies: warning
     sort_unnamed_constructors_first: warning
     specify_nonobvious_local_variable_types: ignore # Incompatible with rules: omit_local_variable_types
-    # specify_nonobvious_property_types: warning # Incompatible with Dart 3.6.0
-    # strict_top_level_inference: warning # Incompatible with Dart 3.6.0
+    specify_nonobvious_property_types: warning
+    strict_top_level_inference: warning
     test_types_in_equals: error
     throw_in_finally: error
     tighten_type_of_initializing_formals: warning
@@ -198,7 +196,7 @@ analyzer:
     type_literal_in_constant_pattern: error
     unawaited_futures: error
     unintended_html_in_doc_comment: error
-    # unnecessary_async: error # Incompatible with Dart 3.6.0
+    unnecessary_async: error # Experimental
     unnecessary_await_in_return: error
     unnecessary_brace_in_string_interps: warning
     unnecessary_breaks: error
@@ -224,11 +222,10 @@ analyzer:
     unnecessary_string_interpolations: warning
     unnecessary_this: warning
     unnecessary_to_list_in_spreads: warning
-    # unnecessary_underscores: warning # Incompatible with Dart 3.6.0
+    unnecessary_underscores: warning
     unreachable_from_main: warning
     unrelated_type_equality_checks: error
-    unsafe_html: error
-    # unsafe_variance: warning # Incompatible with Dart 3.6.0
+    unsafe_variance: error # Experimental
     use_build_context_synchronously: error
     use_colored_box: warning
     use_decorated_box: warning
@@ -335,7 +332,6 @@ linter:
     implementation_imports: true
     implicit_call_tearoffs: true
     implicit_reopen: false
-    # invalid_annotation_target: false # Incompatible with Dart 3.6.0 # Issue: https://github.com/rrousselGit/freezed/issues/488
     invalid_case_patterns: true
     invalid_runtime_check_with_js_interop_types: true
     join_return_with_assignment: false
@@ -365,11 +361,10 @@ linter:
     null_closures: true
     omit_local_variable_types: false # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
     omit_obvious_local_variable_types: true # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: true # Incompatible with Dart 3.6.0 # Incompatible with rules: always_specify_types
+    omit_obvious_property_types: true # Experimental # Incompatible with rules: always_specify_types
     one_member_abstracts: false
     only_throw_errors: true
     overridden_fields: true
-    package_api_docs: true
     package_names: true
     package_prefixed_library_names: true
     parameter_assignments: true
@@ -425,8 +420,8 @@ linter:
     sort_pub_dependencies: true
     sort_unnamed_constructors_first: true
     specify_nonobvious_local_variable_types: false # Incompatible with rules: omit_local_variable_types
-    # specify_nonobvious_property_types: true # Incompatible with Dart 3.6.0
-    # strict_top_level_inference: true # Incompatible with Dart 3.6.0
+    specify_nonobvious_property_types: true
+    strict_top_level_inference: true
     test_types_in_equals: true
     throw_in_finally: true
     tighten_type_of_initializing_formals: true
@@ -435,7 +430,7 @@ linter:
     type_literal_in_constant_pattern: true
     unawaited_futures: true
     unintended_html_in_doc_comment: true
-    # unnecessary_async: true # Incompatible with Dart 3.6.0
+    unnecessary_async: true # Experimental
     unnecessary_await_in_return: true
     unnecessary_brace_in_string_interps: true
     unnecessary_breaks: true
@@ -461,11 +456,10 @@ linter:
     unnecessary_string_interpolations: true
     unnecessary_this: true
     unnecessary_to_list_in_spreads: true
-    # unnecessary_underscores: true # Incompatible with Dart 3.6.0
+    unnecessary_underscores: true
     unreachable_from_main: true
     unrelated_type_equality_checks: true
-    unsafe_html: true
-    # unsafe_variance: true # Incompatible with Dart 3.6.0
+    unsafe_variance: true # Experimental
     use_build_context_synchronously: true
     use_colored_box: true
     use_decorated_box: true
