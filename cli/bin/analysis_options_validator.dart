@@ -4,28 +4,57 @@ import 'package:collection/collection.dart';
 import 'package:yaml/yaml.dart';
 
 void main() {
-  final yamlMap = _parseFile();
+  final files = [
+    'lib/analysis_options_dart_3_0_0.yaml',
+    'lib/analysis_options_dart_3_1_0.yaml',
+    'lib/analysis_options_dart_3_2_0.yaml',
+    'lib/analysis_options_dart_3_3_0.yaml',
+    'lib/analysis_options_dart_3_4_0.yaml',
+    'lib/analysis_options_dart_3_5_0.yaml',
+    'lib/analysis_options_dart_3_6_0.yaml',
+    'lib/analysis_options_dart_3_7_0.yaml',
+  ].map(File.new);
+
+  _processFiles(files);
+}
+
+void _processFiles(Iterable<File> files) {
+  for (final file in files) {
+    stdout.writeln();
+    stdout.writeln('Process file `${file.path}:');
+
+    final isFileValid = _processFile(file);
+
+    if (isFileValid) {
+      stdout.writeln('✅ All checks passed');
+    }
+  }
+}
+
+bool _processFile(File file) {
+  final yamlMap = _parseFile(file);
 
   final analyzerErrors = _parseAnalyzerErrors(yamlMap);
   final linterRules = _parseLinterRules(yamlMap);
 
   var isFileValid = true;
 
-  isFileValid = _validateAnalyzerErrorsForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules) && isFileValid;
-  isFileValid = _validateLinterRulesForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules) && isFileValid;
-  isFileValid = _validateAnalyzerErrorsAreSorted(analyzerErrors) && isFileValid;
-  isFileValid = _validateLinterRulesAreSorted(linterRules) && isFileValid;
+  isFileValid =
+      isFileValid &&
+      _validateAnalyzerErrorsForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules);
+  isFileValid =
+      isFileValid &&
+      _validateLinterRulesForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules);
 
-  if (isFileValid) {
-    stdout.writeln('✅ All checks passed');
-  }
+  isFileValid = isFileValid && _validateAnalyzerErrorsAreSorted(analyzerErrors);
+  isFileValid = isFileValid && _validateLinterRulesAreSorted(linterRules);
+
+  return isFileValid;
 }
 
-YamlMap _parseFile() {
-  final file = File('lib/analysis_options.yaml');
-
+YamlMap _parseFile(File file) {
   if (!file.existsSync()) {
-    stderr.writeln('File analysis_options.yaml not found.');
+    stderr.writeln('File `${file.path}` not found.');
     exit(1);
   }
 
@@ -95,7 +124,6 @@ bool _validateAnalyzerErrorsForMissingRules({
   missingRules.remove('private_optional_parameter');
 
   if (missingRules.isNotEmpty) {
-    stdout.writeln();
     stdout.writeln('⚠️ The following rules from analyzer.errors are missing in linter.rules:');
 
     for (final rule in missingRules) {
@@ -117,7 +145,6 @@ bool _validateLinterRulesForMissingRules({
   final missingRules = linterRules.where((rule) => !analyzerErrors.contains(rule)).toList();
 
   if (missingRules.isNotEmpty) {
-    stdout.writeln();
     stdout.writeln('⚠️ The following rules from linter.rules are missing in analyzer.errors:');
 
     for (final rule in missingRules) {
@@ -137,7 +164,6 @@ bool _validateAnalyzerErrorsAreSorted(Iterable<String> analyzerErrors) {
   final isEquals = const ListEquality<String>().equals(original, sorted);
 
   if (!isEquals) {
-    stdout.writeln();
     stdout.writeln('⚠️ Rules in analyzer.errors are not sorted alphabetically:');
 
     for (final rule in original) {
@@ -164,7 +190,6 @@ bool _validateLinterRulesAreSorted(Iterable<String> linterRules) {
   final isEquals = const ListEquality<String>().equals(original, sorted);
 
   if (!isEquals) {
-    stdout.writeln();
     stdout.writeln('⚠️ Rules in linter.rules are not sorted alphabetically:');
 
     for (final rule in original) {
