@@ -63,7 +63,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "34.0.0"
+    version: "35.0.0"
   meta:
     dependency: transitive
     description:
