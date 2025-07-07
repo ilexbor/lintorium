@@ -12,6 +12,21 @@
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
+## Table of contents
+
+- [Versioning system](#versioning-system)
+- [Installation](#installation)
+- [Upgrading to the latest lints](#upgrading-to-the-latest-lints)
+- [Usage](#usage)
+  - [Excluding files and directories](#excluding-files-and-directories)
+  - [Suppressing Rules](#suppressing-rules)
+  - [Customizing the predefined lint sets](#customizing-the-predefined-lint-sets)
+- [Badges](#lintorium-badges)
+- [Changelog](#changelog)
+- [Issues](#issues)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Versioning system
 
 Lintorium is fully compatible with both **Dart** and **Flutter** projects.
@@ -90,6 +105,8 @@ For Flutter projects, use:
 ```shell
 flutter analyze
 ```
+
+These commands can also be used for running analysis on CI.
 
 ### Excluding files and directories
 
@@ -240,7 +257,9 @@ Your feedback is valuable and will help improve the package!
 ## Contributing
 
 Contributions are welcome!  
-Please fork this repository and submit pull requests.
+Please [fork this repository](https://github.com/ilexbor/lintorium/fork) and [submit pull requests](https://github.com/ilexbor/lintorium/pulls).
+
+By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
