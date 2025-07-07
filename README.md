@@ -12,21 +12,45 @@
 The strictest linting rules for Dart code.
 Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
 
-## Compatibility with Dart SDK
+## Versioning system
 
-Lintorium fully compatible with both **Dart** and **Flutter** projects.
+Lintorium is fully compatible with both **Dart** and **Flutter** projects.
+
+### Version correlation
+
+The first digit of Lintorium's version number corresponds to the minimum required Dart SDK version.
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
-| \>=3.7.0         | ✅ >=37.0.0        |
-| \>=3.6.0         | ✅ >=36.0.0        |
-| \>=3.5.0         | ✅ >=35.0.0        |
-| \>=3.4.0         | ✅ >=34.0.0        |
-| \>=3.3.0         | ✅ >=33.0.0        |
-| \>=3.2.0         | ✅ >=32.0.0        |
-| \>=3.1.0         | ✅ >=31.0.0        |
-| \>=3.0.0         | ✅ >=30.0.0        |
-| \<3.0.0          | ❌ Not supported   |
+| >=3.8.0          | ✅ >=38.0.0        |
+| >=3.7.0          | ✅ >=37.0.0        |
+| >=3.6.0          | ✅ >=36.0.0        |
+| >=3.5.0          | ✅ >=35.0.0        |
+| >=3.4.0          | ✅ >=34.0.0        |
+| >=3.3.0          | ✅ >=33.0.0        |
+| >=3.2.0          | ✅ >=32.0.0        |
+| >=3.1.0          | ✅ >=31.0.0        |
+| >=3.0.0          | ✅ >=30.0.0        |
+| <3.0.0           | ❌ Not supported   |
+
+### Recommended version specification
+
+When adding Lintorium to your project, it's highly recommended to use the caret (`^`) operator:
+
+```yaml
+# pubspec.yaml
+dev_dependencies:
+  lintorium: ^37.0.0  # Replace with your required version
+```
+
+This approach allows Lintorium to automatically update its linting rules specifically for your minimum Dart SDK version, ensuring you always get the latest rules optimized for your minimum Dart SDK version.
+
+### Active support for all Dart SDK versions
+
+Unlike many other linting packages, Lintorium actively maintains and supports rules for **all Dart SDK versions** starting from Dart SDK 3.0.0. This means:
+- Rules are continuously updated and optimized for each supported Dart SDK version
+- Improvements are applied across all supported versions
+- You can confidently use Lintorium regardless of your current Dart SDK version
 
 ## Installation
 
