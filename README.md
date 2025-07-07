@@ -35,15 +35,15 @@ The first digit of Lintorium's version number corresponds to the minimum require
 
 ### Recommended version specification
 
-When adding Lintorium to your project, it's highly recommended to use the caret (`^`) operator:
+When adding Lintorium to your project, it's highly recommended to use the greater than or equal to (`>=`) operator:
 
 ```yaml
 # pubspec.yaml
 dev_dependencies:
-  lintorium: ^37.0.0  # Replace with your required version
+  lintorium: >=30.0.0  # Replace with your required version
 ```
 
-This approach allows Lintorium to automatically update its linting rules specifically for your minimum Dart SDK version, ensuring you always get the latest rules optimized for your minimum Dart SDK version.
+This approach allows the `dart pub get` and `dart pub upgrade` commands to automatically select the latest Lintorium version that's compatible with your project's Dart SDK, ensuring you always get the latest rules optimized for your Dart SDK version.
 
 ### Active support for all Dart SDK versions
 
