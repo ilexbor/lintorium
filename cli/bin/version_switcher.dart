@@ -126,7 +126,7 @@ void _updatePubspecFile(File file, Version minDartSdkVersion, Version maxDartSdk
   final regexp = RegExp(r'(environment:\s*[\r\n]+\s+sdk:\s*).*([\r\n])');
 
   final updatedContent = content.replaceAllMapped(regexp, (match) {
-    return "${match.group(1)}'>=$minDartSdkVersion <$maxDartSdkVersion'${match.group(2)}";
+    return "${match.group(1)}'>=$minDartSdkVersion'${match.group(2)}";
   });
 
   file.writeAsStringSync(updatedContent);
