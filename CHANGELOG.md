@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [38.0.0]
+
+### Changed
+- Minimum Dart SDK version updated to `>=3.8.0`.
+- Updated `README.md`.
+
+### Added
+- CLI tool for fast version switching.
+
 ## [37.0.0]
 
 ### Changed
