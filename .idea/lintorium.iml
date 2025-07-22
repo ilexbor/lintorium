@@ -27,6 +27,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk — копия/lib/_internal/sdk_library_metadata/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk — копия/lib/_internal/sdk_library_metadata/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/.dvm/dart_sdk — копия/lib/_internal/sdk_library_metadata/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example_flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/example_flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/example_flutter/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
