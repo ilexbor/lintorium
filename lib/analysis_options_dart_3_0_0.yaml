@@ -5,10 +5,13 @@
 analyzer:
 
   exclude:
-    - "**/generated/**"
-    - "**/*.freezed.dart"
-    - "**/*.g.dart"
-    - "**/*.gen.dart"
+    - "**/.generated/**"    # Excludes all files in the ".generated" directory and its subdirectories
+    - "**/generated/**"     # Excludes all files in the "generated" directory and its subdirectories
+    - "**/*.freezed.dart"   # Excludes all files ending with ".freezed.dart"
+    - "**/*.g.dart"         # Excludes all files ending with ".g.dart"
+    - "**/*.gen.dart"       # Excludes all files ending with ".gen.dart"
+    - "**/*.generated.dart" # Excludes all files ending with ".generated.dart"
+    - "**/*.gr.dart"        # Excludes all files ending with ".gr.dart"
 
   language:
     strict-casts: true
@@ -87,7 +90,7 @@ analyzer:
     directives_ordering: warning
     discarded_futures: error
     do_not_use_environment: warning
-    # document_ignores: error # Incompatible with Dart 3.4
+    # document_ignores: warning # Incompatible with Dart 3.4
     empty_catches: error
     empty_constructor_bodies: error
     empty_statements: error
@@ -130,9 +133,9 @@ analyzer:
     noop_primitive_operations: warning
     null_check_on_nullable_type_parameter: error
     null_closures: error
-    omit_local_variable_types: error # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
+    omit_local_variable_types: warning # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
     # omit_obvious_local_variable_types: error # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: error # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types
+    # omit_obvious_property_types: ignore # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types, type_annotate_public_apis
     one_member_abstracts: ignore
     only_throw_errors: error
     overridden_fields: error
@@ -193,13 +196,13 @@ analyzer:
     sort_constructors_first: warning
     sort_pub_dependencies: warning
     sort_unnamed_constructors_first: warning
-    # specify_nonobvious_local_variable_types: warning # Incompatible with Dart 3.4 # Incompatible with rules: omit_local_variable_types
+    # specify_nonobvious_local_variable_types: ignore # Incompatible with rules: omit_local_variable_types
     # specify_nonobvious_property_types: warning # Incompatible with Dart 3.4
     # strict_top_level_inference: warning # Incompatible with Dart 3.4
     test_types_in_equals: error
     throw_in_finally: error
     tighten_type_of_initializing_formals: warning
-    type_annotate_public_apis: error
+    type_annotate_public_apis: error # Incompatible with rules: omit_obvious_property_types
     type_init_formals: warning
     type_literal_in_constant_pattern: error
     unawaited_futures: error
@@ -376,7 +379,7 @@ linter:
     null_closures: true
     omit_local_variable_types: true # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
     # omit_obvious_local_variable_types: true # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: true # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types
+    # omit_obvious_property_types: false # Incompatible with Dart 3.4 # Incompatible with rules: always_specify_types, type_annotate_public_apis
     one_member_abstracts: false
     only_throw_errors: true
     overridden_fields: true
@@ -436,13 +439,13 @@ linter:
     sort_constructors_first: true
     sort_pub_dependencies: true
     sort_unnamed_constructors_first: true
-    # specify_nonobvious_local_variable_types: true # Incompatible with Dart 3.4 # Incompatible with rules: omit_local_variable_types
+    # specify_nonobvious_local_variable_types: false # Incompatible with Dart 3.4 # Incompatible with rules: omit_local_variable_types
     # specify_nonobvious_property_types: true # Incompatible with Dart 3.4
     # strict_top_level_inference: true # Incompatible with Dart 3.4
     test_types_in_equals: true
     throw_in_finally: true
     tighten_type_of_initializing_formals: true
-    type_annotate_public_apis: true
+    type_annotate_public_apis: true # Incompatible with rules: omit_obvious_property_types
     type_init_formals: true
     type_literal_in_constant_pattern: true
     unawaited_futures: true

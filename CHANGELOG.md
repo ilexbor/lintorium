@@ -5,121 +5,176 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [38.0.0]
+## [38.1.0] - 2025-07-22
 
 ### Changed
-- Minimum Dart SDK version updated to `>=3.8.0`.
-- Updated `README.md`.
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Enabled the `omit_local_variable_types` rule (previously disabled): May allow previously failing code to pass linting.
+- [BREAKING CHANGE] Changed the `omit_obvious_property_types` rule severity from `warning` to `ignore` and disabled it (previously enabled): May affect CI/CD pipelines that enforce strict linting.
+
+## [37.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Enabled the `omit_local_variable_types` rule (previously disabled): May allow previously failing code to pass linting.
+- [BREAKING CHANGE] Changed the `omit_obvious_property_types` rule severity from `warning` to `ignore` and disabled it (previously enabled): May affect CI/CD pipelines that enforce strict linting.
+
+## [36.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `document_ignores` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+- [BREAKING CHANGE] Enabled the `omit_local_variable_types` rule (previously disabled): May allow previously failing code to pass linting.
+
+## [35.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `document_ignores` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [34.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [33.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [32.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [31.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [30.1.0] - 2025-07-22
+
+### Changed
+- Added new rules to the `analyzer.exclude` section in `analysis_options.yaml`.
+- [BREAKING CHANGE] Changed the `omit_local_variable_types` rule severity from `error` to `warning`: May allow previously failing code to pass linting.
+
+## [38.0.0] - 2025-07-08
 
 ### Added
 - CLI tool for fast version switching.
 
-## [37.0.0]
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.8.0`.
+- Updated `README.md`.
+
+## [37.0.0] - 2025-07-08
 
 ### Changed
 - Updated `README.md`.
 
-## [36.0.0]
+## [36.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [35.0.0]
+## [35.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [34.0.0]
+## [34.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [33.0.0]
+## [33.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [32.0.0]
+## [32.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [31.0.0]
+## [31.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [30.0.0]
+## [30.0.0] - 2025-07-07
 
 ### Changed
 - Updated `README.md`.
 
-## [1.7.0]
+## [1.7.0] - 2025-04-06
 
 ### Changed
-- Minimum Dart SDK version updated to `>=3.7.0`.
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.7.0`.
 
-## [1.6.0]
-
-### Changed
-- Minimum Dart SDK version updated to `>=3.6.0`.
-
-## [1.5.0]
+## [1.6.0] - 2025-04-06
 
 ### Changed
-- Minimum Dart SDK version updated to `>=3.5.0`.
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.6.0`.
 
-## [1.4.0]
-
-### Changed
-- Minimum Dart SDK version updated to `>=3.4.0`.
-
-## [1.3.0]
+## [1.5.0] - 2025-04-06
 
 ### Changed
-- Minimum Dart SDK version updated to `>=3.3.0`.
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.5.0`.
 
-## [1.2.0]
-
-### Changed
-- Minimum Dart SDK version updated to `>=3.2.0`.
-
-## [1.1.0]
+## [1.4.0] - 2025-04-06
 
 ### Changed
-- Minimum Dart SDK compatibility updated to `>=3.1.0`.
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.4.0`.
 
-## [1.0.0]
+## [1.3.0] - 2025-04-06
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.3.0`.
+
+## [1.2.0] - 2025-04-06
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.2.0`.
+
+## [1.1.0] - 2025-04-06
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.1.0`.
+
+## [1.0.0] - 2025-04-06
 
 ### Added
 - CLI tool for validating the `analysis_options.yaml` file.
 
 ### Changed
-- Minimum Dart SDK compatibility updated to `>=3.0.0`.
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.0.0`.
+- [BREAKING CHANGE] Changed the `private_optional_parameter` rule severity to `ignore`: May silence errors previously shown in user projects.
 
 ### Fixed
-- Resolved analyzer warnings that could appear when including `package:lintorium/analysis_options.yaml` in a project.
+- Resolved analyzer warnings when including `package:lintorium/analysis_options.yaml` in a project.
 
-### Breaking Changes
-- Analyzer diagnostic `private_optional_parameter` is now overridden with severity `ignore`.  
-  This may silence errors that were previously shown in user projects.
-
-## [0.1.3]
-
-### Improved
-- Updated documentation to enhance clarity and usability.
-
-## [0.1.2]
+## [0.1.3] - 2025-01-11
 
 ### Changed
-- Updated the required Dart version to `3.4.0`.
+- Updated documentation for improved clarity and usability.
 
-## [0.1.1]
+## [0.1.2] - 2025-01-11
 
-### Improved
-- Enhanced `README.md`, `CHANGELOG.md` and `LICENSE` for better presentation and readability on `pub.dev`.
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.4.0`.
 
-## [0.1.0]
+## [0.1.1] - 2025-01-08
+
+### Changed
+- Updated `README.md`, `CHANGELOG.md`, and `LICENSE` for better presentation and readability on `pub.dev`.
+
+## [0.1.0] - 2025-01-08
 
 ### Added
-- First release of the package.
+- Initial release of the package.
