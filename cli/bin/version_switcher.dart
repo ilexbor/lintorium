@@ -5,7 +5,7 @@ import 'package:yaml/yaml.dart';
 
 void main() {
   try {
-    final lintoriumVersion = _getLintoriumVersionFromUser();
+    final lintoriumVersion = _getLintoriumVersionFromPubspecFile();
 
     final (minDartSdkVersion: minDartSdkVersion, maxDartSdkVersion: maxDartSdkVersion) = _getDartSdkVersions(
       lintoriumVersion,
@@ -25,24 +25,6 @@ void main() {
     stdout.writeln('⚠️ Error: $e');
     exit(1);
   }
-}
-
-Version _getLintoriumVersionFromUser() {
-  stdout.writeln();
-  stdout.write('Enter lintorium version (or press Enter to use version from pubspec.yaml): ');
-
-  final Version version;
-
-  final input = stdin.readLineSync();
-
-  if (input == null || input.isEmpty) {
-    version = _getLintoriumVersionFromPubspecFile();
-    return version;
-  }
-
-  version = Version.parse(input);
-
-  return version;
 }
 
 Version _getLintoriumVersionFromPubspecFile() {
