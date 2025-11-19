@@ -18,7 +18,6 @@ void main() {
     _updateAnalysisOptionsFile(minDartSdkVersion.toString());
 
     _updatePubspecFile(File('../pubspec.yaml'), minDartSdkVersion, maxDartSdkVersion);
-    _updatePubspecFile(File('../cli/pubspec.yaml'), minDartSdkVersion, maxDartSdkVersion);
     _updatePubspecFile(File('../example/pubspec.yaml'), minDartSdkVersion, maxDartSdkVersion);
 
     stdout.writeln('✅ Success');
@@ -65,28 +64,26 @@ Version _getLintoriumVersionFromPubspecFile() {
 }
 
 ({Version minDartSdkVersion, Version maxDartSdkVersion}) _getDartSdkVersions(Version lintoriumVersion) {
-  switch (lintoriumVersion.major) {
-    case 30:
-      return (minDartSdkVersion: Version(3, 0, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 31:
-      return (minDartSdkVersion: Version(3, 1, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 32:
-      return (minDartSdkVersion: Version(3, 2, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 33:
-      return (minDartSdkVersion: Version(3, 3, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 34:
-      return (minDartSdkVersion: Version(3, 4, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 35:
-      return (minDartSdkVersion: Version(3, 5, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 36:
-      return (minDartSdkVersion: Version(3, 6, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 37:
-      return (minDartSdkVersion: Version(3, 7, 0), maxDartSdkVersion: Version(4, 0, 0));
-    case 38:
-      return (minDartSdkVersion: Version(3, 8, 0), maxDartSdkVersion: Version(4, 0, 0));
-    default:
-      throw Exception('Version `$lintoriumVersion` not supported');
+  // Versioning scheme: Dart 3.X.Y -> Lintorium 3XY.x.x
+  // Examples: Dart 3.0.0 -> Lintorium 300.x.x, Dart 3.10.5 -> Lintorium 310.x.x
+
+  final major = lintoriumVersion.major;
+
+  if (major < 300) {
+    throw Exception(
+      'Version `$lintoriumVersion` not supported. Expected Lintorium version in range 300.x.x to 399.x.x',
+    );
   }
+
+  // Extract Dart major and minor from Lintorium major version
+  // 300 -> 3.0, 310 -> 3.10, 305 -> 3.5
+  final dartMajor = major ~/ 100; // 3
+  final dartMinor = major % 100; // 0-99
+
+  final minDartSdkVersion = Version(dartMajor, dartMinor, 0);
+  final maxDartSdkVersion = Version(dartMajor + 1, 0, 0); // <4.0.0
+
+  return (minDartSdkVersion: minDartSdkVersion, maxDartSdkVersion: maxDartSdkVersion);
 }
 
 void _updateAnalysisOptionsFile(String dartVersion) {

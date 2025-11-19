@@ -37,15 +37,17 @@ The first digit of Lintorium's version number corresponds to the minimum require
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
-| >=3.8.0          | ✅ >=38.0.0        |
-| >=3.7.0          | ✅ >=37.0.0        |
-| >=3.6.0          | ✅ >=36.0.0        |
-| >=3.5.0          | ✅ >=35.0.0        |
-| >=3.4.0          | ✅ >=34.0.0        |
-| >=3.3.0          | ✅ >=33.0.0        |
-| >=3.2.0          | ✅ >=32.0.0        |
-| >=3.1.0          | ✅ >=31.0.0        |
-| >=3.0.0          | ✅ >=30.0.0        |
+| >=3.10.0         | ✅ >=310.0.0       |
+| >=3.9.0          | ✅ >=309.0.0       |
+| >=3.8.0          | ✅ >=308.0.0       |
+| >=3.7.0          | ✅ >=307.0.0       |
+| >=3.6.0          | ✅ >=306.0.0       |
+| >=3.5.0          | ✅ >=305.0.0       |
+| >=3.4.0          | ✅ >=304.0.0       |
+| >=3.3.0          | ✅ >=303.0.0       |
+| >=3.2.0          | ✅ >=302.0.0       |
+| >=3.1.0          | ✅ >=301.0.0       |
+| >=3.0.0          | ✅ >=300.0.0       |
 | <3.0.0           | ❌ Not supported   |
 
 ### Recommended version specification
@@ -55,7 +57,7 @@ When adding Lintorium to your project, it's highly recommended to use the greate
 ```yaml
 # pubspec.yaml
 dev_dependencies:
-  lintorium: >=30.0.0  # Replace with your required version
+  lintorium: >=300.0.0  # Replace with your required version
 ```
 
 This approach allows the `dart pub get` and `dart pub upgrade` commands to automatically select the latest Lintorium version that's compatible with your project's Dart SDK, ensuring you always get the latest rules optimized for your Dart SDK version.

@@ -14,6 +14,8 @@ void main() {
     'lib/analysis_options_dart_3_6_0.yaml',
     'lib/analysis_options_dart_3_7_0.yaml',
     'lib/analysis_options_dart_3_8_0.yaml',
+    'lib/analysis_options_dart_3_9_0.yaml',
+    'lib/analysis_options_dart_3_10_0.yaml',
   ].map(File.new);
 
   _processFiles(files);
