@@ -22,10 +22,11 @@ analyzer:
     always_declare_return_types: error
     always_put_control_body_on_new_line: warning
     always_put_required_named_parameters_first: warning
+    # always_require_non_null_named_parameters: warning # Removed in Dart 3.3.0
     always_specify_types: ignore # Incompatible with rules: avoid_types_on_closure_parameters, omit_local_variable_types, omit_obvious_local_variable_types, omit_obvious_property_types
     always_use_package_imports: error # Incompatible with rules: prefer_relative_imports
     annotate_overrides: ignore
-    # annotate_redeclares: error # Experimental
+    annotate_redeclares: warning # Experimental from Dart 3.2
     avoid_annotating_with_dynamic: ignore
     avoid_bool_literals_in_conditional_expressions: error
     avoid_catches_without_on_clauses: error
@@ -39,7 +40,7 @@ analyzer:
     avoid_field_initializers_in_const_classes: warning
     avoid_final_parameters: warning # Incompatible with rules: prefer_final_parameters
     avoid_function_literals_in_foreach_calls: error
-    # avoid_futureor_void: error # Incompatible with Dart 3.4.0
+    # avoid_futureor_void: error # Added in Dart 3.6
     avoid_implementing_value_types: error
     avoid_init_to_null: warning
     avoid_js_rounded_ints: error
@@ -52,6 +53,8 @@ analyzer:
     avoid_relative_lib_imports: error
     avoid_renaming_method_parameters: error
     avoid_return_types_on_setters: warning
+    # avoid_returning_null: error # Removed in Dart 3.3.0
+    # avoid_returning_null_for_future: error # Removed in Dart 3.3.0
     avoid_returning_null_for_void: error
     avoid_returning_this: ignore
     avoid_setters_without_getters: ignore
@@ -87,11 +90,10 @@ analyzer:
     directives_ordering: warning
     discarded_futures: error
     do_not_use_environment: warning
-    # document_ignores: warning # Incompatible with Dart 3.4.0
+    # document_ignores: warning # Added in Dart 3.5
     empty_catches: error
     empty_constructor_bodies: error
     empty_statements: error
-    enable_null_safety: error
     eol_at_end_of_file: ignore
     exhaustive_cases: error
     file_names: error
@@ -100,9 +102,9 @@ analyzer:
     implementation_imports: error
     implicit_call_tearoffs: error
     implicit_reopen: ignore
-    # invalid_annotation_target: ignore # Incompatible with Dart 3.4.0 # Issue: https://github.com/rrousselGit/freezed/issues/488
     invalid_case_patterns: error
-    # invalid_runtime_check_with_js_interop_types: error # Incompatible with Dart 3.4.0
+    # invalid_runtime_check_with_js_interop_types: error # Added in Dart 3.5
+    # iterable_contains_unrelated_type: error # Removed in Dart 3.3.0
     join_return_with_assignment: ignore
     leading_newlines_in_multiline_strings: error
     library_annotations: error
@@ -110,6 +112,7 @@ analyzer:
     library_prefixes: error
     library_private_types_in_public_api: error
     lines_longer_than_80_chars: ignore
+    # list_remove_unrelated_type: error # Removed in Dart 3.3.0
     literal_only_boolean_expressions: warning
     matching_super_parameters: warning
     missing_code_block_language_in_doc_comment: warning
@@ -129,8 +132,8 @@ analyzer:
     null_check_on_nullable_type_parameter: error
     null_closures: error
     omit_local_variable_types: warning # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
-    # omit_obvious_local_variable_types: error # Incompatible with Dart 3.4.0 # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: ignore # Incompatible with Dart 3.4.0 # Incompatible with rules: always_specify_types, type_annotate_public_apis
+    # omit_obvious_local_variable_types: error # Added in Dart 3.6 # Incompatible with rules: always_specify_types
+    # omit_obvious_property_types: ignore # Added in Dart 3.7 # Incompatible with rules: always_specify_types, type_annotate_public_apis
     one_member_abstracts: ignore
     only_throw_errors: error
     overridden_fields: error
@@ -190,9 +193,10 @@ analyzer:
     sort_constructors_first: warning
     sort_pub_dependencies: warning
     sort_unnamed_constructors_first: warning
-    # specify_nonobvious_local_variable_types: ignore # Incompatible with Dart 3.4.0 # Incompatible with rules: omit_local_variable_types
-    # specify_nonobvious_property_types: warning # Incompatible with Dart 3.4.0
-    # strict_top_level_inference: warning # Incompatible with Dart 3.4.0
+    # specify_nonobvious_local_variable_types: ignore # Added in Dart 3.6 # Incompatible with rules: omit_local_variable_types
+    # specify_nonobvious_property_types: warning # Added in Dart 3.7
+    # strict_top_level_inference: warning # Added in Dart 3.7
+    # switch_on_type: error # Added in Dart 3.9
     test_types_in_equals: error
     throw_in_finally: error
     tighten_type_of_initializing_formals: warning
@@ -200,8 +204,8 @@ analyzer:
     type_init_formals: warning
     type_literal_in_constant_pattern: error
     unawaited_futures: error
-    # unintended_html_in_doc_comment: error # Incompatible with Dart 3.4.0
-    # unnecessary_async: error # Incompatible with Dart 3.4.0
+    # unintended_html_in_doc_comment: error # Added in Dart 3.5
+    # unnecessary_async: error # Added in Dart 3.7
     unnecessary_await_in_return: error
     unnecessary_brace_in_string_interps: warning
     unnecessary_breaks: error
@@ -209,6 +213,7 @@ analyzer:
     unnecessary_constructor_name: error
     unnecessary_final: ignore # Incompatible with rules: prefer_final_in_for_each, prefer_final_locals, prefer_final_parameters
     unnecessary_getters_setters: warning
+    # unnecessary_ignore: warning # Added in Dart 3.8
     unnecessary_lambdas: warning
     unnecessary_late: error
     unnecessary_library_directive: warning
@@ -227,11 +232,12 @@ analyzer:
     unnecessary_string_interpolations: warning
     unnecessary_this: warning
     unnecessary_to_list_in_spreads: warning
-    # unnecessary_underscores: warning # Incompatible with Dart 3.4.0
+    # unnecessary_unawaited: warning # Added in Dart 3.9
+    # unnecessary_underscores: warning # Added in Dart 3.7
     unreachable_from_main: warning
     unrelated_type_equality_checks: error
     unsafe_html: error
-    # unsafe_variance: warning # Incompatible with Dart 3.4.0
+    # unsafe_variance: warning # Added in Dart 3.7
     use_build_context_synchronously: error
     use_colored_box: warning
     use_decorated_box: warning
@@ -243,6 +249,7 @@ analyzer:
     use_key_in_widget_constructors: error
     use_late_for_private_fields_and_variables: ignore
     use_named_constants: warning
+    # use_null_aware_elements: warning # Added in Dart 3.8
     use_raw_strings: error
     use_rethrow_when_possible: error
     use_setters_to_change_properties: warning
@@ -251,7 +258,7 @@ analyzer:
     use_super_parameters: error
     use_test_throws_matchers: error
     use_to_and_as_if_applicable: error
-    # use_truncating_division: warning # Incompatible with Dart 3.4.0
+    # use_truncating_division: warning # Added in Dart 3.6
     valid_regexps: error
     void_checks: error
 
@@ -260,10 +267,11 @@ linter:
     always_declare_return_types: true
     always_put_control_body_on_new_line: true
     always_put_required_named_parameters_first: true
+    # always_require_non_null_named_parameters: true # Removed in Dart 3.3.0
     always_specify_types: false # Incompatible with rules: avoid_types_on_closure_parameters, omit_local_variable_types, omit_obvious_local_variable_types, omit_obvious_property_types
     always_use_package_imports: true # Incompatible with rules: prefer_relative_imports
     annotate_overrides: false
-    # annotate_redeclares: true # Experimental
+    annotate_redeclares: true # Experimental from Dart 3.2
     avoid_annotating_with_dynamic: false
     avoid_bool_literals_in_conditional_expressions: true
     avoid_catches_without_on_clauses: true
@@ -277,7 +285,7 @@ linter:
     avoid_field_initializers_in_const_classes: true
     avoid_final_parameters: true # Incompatible with rules: prefer_final_parameters
     avoid_function_literals_in_foreach_calls: true
-    # avoid_futureor_void: true # Incompatible with Dart 3.4.0
+    # avoid_futureor_void: true # Added in Dart 3.6
     avoid_implementing_value_types: true
     avoid_init_to_null: true
     avoid_js_rounded_ints: true
@@ -290,6 +298,8 @@ linter:
     avoid_relative_lib_imports: true
     avoid_renaming_method_parameters: true
     avoid_return_types_on_setters: true
+    # avoid_returning_null: true # Removed in Dart 3.3.0
+    # avoid_returning_null_for_future: true # Removed in Dart 3.3.0
     avoid_returning_null_for_void: true
     avoid_returning_this: false
     avoid_setters_without_getters: false
@@ -325,11 +335,10 @@ linter:
     directives_ordering: true
     discarded_futures: true
     do_not_use_environment: true
-    # document_ignores: true # Incompatible with Dart 3.4.0
+    # document_ignores: true # Added in Dart 3.5
     empty_catches: true
     empty_constructor_bodies: true
     empty_statements: true
-    enable_null_safety: true
     eol_at_end_of_file: false
     exhaustive_cases: true
     file_names: true
@@ -338,9 +347,9 @@ linter:
     implementation_imports: true
     implicit_call_tearoffs: true
     implicit_reopen: false
-    # invalid_annotation_target: false # Incompatible with Dart 3.4.0 # Issue: https://github.com/rrousselGit/freezed/issues/488
     invalid_case_patterns: true
-    # invalid_runtime_check_with_js_interop_types: true # Incompatible with Dart 3.4.0
+    # invalid_runtime_check_with_js_interop_types: true # Added in Dart 3.5
+    # iterable_contains_unrelated_type: true # Removed in Dart 3.3.0
     join_return_with_assignment: false
     leading_newlines_in_multiline_strings: true
     library_annotations: true
@@ -348,6 +357,7 @@ linter:
     library_prefixes: true
     library_private_types_in_public_api: true
     lines_longer_than_80_chars: false
+    # list_remove_unrelated_type: true # Removed in Dart 3.3.0
     literal_only_boolean_expressions: true
     matching_super_parameters: true
     missing_code_block_language_in_doc_comment: true
@@ -367,8 +377,8 @@ linter:
     null_check_on_nullable_type_parameter: true
     null_closures: true
     omit_local_variable_types: true # Incompatible with rules: always_specify_types, specify_nonobvious_local_variable_types
-    # omit_obvious_local_variable_types: true # Incompatible with Dart 3.4.0 # Incompatible with rules: always_specify_types
-    # omit_obvious_property_types: false # Incompatible with Dart 3.4.0 # Incompatible with rules: always_specify_types, type_annotate_public_apis
+    # omit_obvious_local_variable_types: true # Added in Dart 3.6 # Incompatible with rules: always_specify_types
+    # omit_obvious_property_types: false # Added in Dart 3.7 # Incompatible with rules: always_specify_types, type_annotate_public_apis
     one_member_abstracts: false
     only_throw_errors: true
     overridden_fields: true
@@ -427,9 +437,10 @@ linter:
     sort_constructors_first: true
     sort_pub_dependencies: true
     sort_unnamed_constructors_first: true
-    # specify_nonobvious_local_variable_types: false # Incompatible with Dart 3.4.0 # Incompatible with rules: omit_local_variable_types
-    # specify_nonobvious_property_types: true # Incompatible with Dart 3.4.0
-    # strict_top_level_inference: true # Incompatible with Dart 3.4.0
+    # specify_nonobvious_local_variable_types: false # Added in Dart 3.6 # Incompatible with rules: omit_local_variable_types
+    # specify_nonobvious_property_types: true # Added in Dart 3.7
+    # strict_top_level_inference: true # Added in Dart 3.7
+    # switch_on_type: true # Added in Dart 3.9
     test_types_in_equals: true
     throw_in_finally: true
     tighten_type_of_initializing_formals: true
@@ -437,8 +448,8 @@ linter:
     type_init_formals: true
     type_literal_in_constant_pattern: true
     unawaited_futures: true
-    # unintended_html_in_doc_comment: true # Incompatible with Dart 3.4.0
-    # unnecessary_async: true # Incompatible with Dart 3.4.0
+    # unintended_html_in_doc_comment: true # Added in Dart 3.5
+    # unnecessary_async: true # Added in Dart 3.7
     unnecessary_await_in_return: true
     unnecessary_brace_in_string_interps: true
     unnecessary_breaks: true
@@ -446,6 +457,7 @@ linter:
     unnecessary_constructor_name: true
     unnecessary_final: false # Incompatible with rules: prefer_final_in_for_each, prefer_final_locals, prefer_final_parameters
     unnecessary_getters_setters: true
+    # unnecessary_ignore: true # Added in Dart 3.8
     unnecessary_lambdas: true
     unnecessary_late: true
     unnecessary_library_directive: true
@@ -464,11 +476,12 @@ linter:
     unnecessary_string_interpolations: true
     unnecessary_this: true
     unnecessary_to_list_in_spreads: true
-    # unnecessary_underscores: true # Incompatible with Dart 3.4.0
+    # unnecessary_unawaited: true # Added in Dart 3.9
+    # unnecessary_underscores: true # Added in Dart 3.7
     unreachable_from_main: true
     unrelated_type_equality_checks: true
     unsafe_html: true
-    # unsafe_variance: true # Incompatible with Dart 3.4.0
+    # unsafe_variance: true # Added in Dart 3.7
     use_build_context_synchronously: true
     use_colored_box: true
     use_decorated_box: true
@@ -480,6 +493,7 @@ linter:
     use_key_in_widget_constructors: true
     use_late_for_private_fields_and_variables: false
     use_named_constants: true
+    # use_null_aware_elements: true # Added in Dart 3.8
     use_raw_strings: true
     use_rethrow_when_possible: true
     use_setters_to_change_properties: true
@@ -488,6 +502,6 @@ linter:
     use_super_parameters: true
     use_test_throws_matchers: true
     use_to_and_as_if_applicable: true
-    # use_truncating_division: true # Incompatible with Dart 3.4.0
+    # use_truncating_division: true # Added in Dart 3.6
     valid_regexps: true
     void_checks: true
