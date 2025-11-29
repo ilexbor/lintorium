@@ -1,4 +1,4 @@
-include: package:lintorium/analysis_options_dart_3_8_0.yaml
+include: package:lintorium/analysis_options_dart_3_9_0.yaml
 
 analyzer:
   exclude:
