@@ -210,14 +210,16 @@ Future<bool> _runPublishDryRun(String workingDirectory) async {
     workingDirectory,
   );
 
-  // Check for validation errors
-  if (output.contains('Package validation found the following error') ||
-      output.contains('Package validation found the following errors')) {
+  // Check for errors - match "Package has N error" where N > 0
+  final errorMatch = RegExp(r'Package has (\d+) error').firstMatch(output);
+  if (errorMatch != null && int.parse(errorMatch.group(1)!) > 0) {
     return false;
   }
 
   // Check for warnings (treated as errors for strict validation)
-  if (output.contains('Package has') && output.contains('warning')) {
+  // Match "Package has N warning" where N > 0
+  final warningMatch = RegExp(r'Package has (\d+) warning').firstMatch(output);
+  if (warningMatch != null && int.parse(warningMatch.group(1)!) > 0) {
     return false;
   }
 
