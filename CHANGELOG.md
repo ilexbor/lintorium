@@ -5,6 +5,99 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [310.0.0] - 2025-11-29
+
+### Added
+- Enabled the `switch_on_type` rule with `error` severity.
+- Enabled the `unnecessary_ignore` rule with `warning` severity.
+- Enabled the `unnecessary_unawaited` rule with `warning` severity.
+- Enabled the `use_null_aware_elements` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [309.0.0] - 2025-11-29
+
+### Added
+- Enabled the `switch_on_type` rule with `error` severity.
+- Enabled the `unnecessary_ignore` rule with `warning` severity.
+- Enabled the `unnecessary_unawaited` rule with `warning` severity.
+- Enabled the `use_null_aware_elements` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [308.0.0] - 2025-11-29
+
+### Added
+- Enabled the `unnecessary_ignore` rule with `warning` severity.
+- Enabled the `use_null_aware_elements` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [307.0.0] - 2025-11-29
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+- The `unsafe_html` rule (removed in Dart 3.7).
+
+## [306.0.0] - 2025-11-29
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [305.0.0] - 2025-11-29
+
+### Added
+- Enabled the `annotate_redeclares` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [304.0.0] - 2025-11-29
+
+### Added
+- Enabled the `annotate_redeclares` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [303.0.0] - 2025-11-29
+
+### Added
+- Enabled the `annotate_redeclares` rule with `warning` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [302.0.0] - 2025-11-29
+
+### Added
+- Enabled the `annotate_redeclares` rule with `warning` severity.
+- Enabled the `iterable_contains_unrelated_type` rule with `error` severity.
+- Enabled the `list_remove_unrelated_type` rule with `error` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [301.0.0] - 2025-11-29
+
+### Added
+- Enabled the `iterable_contains_unrelated_type` rule with `error` severity.
+- Enabled the `list_remove_unrelated_type` rule with `error` severity.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
+## [300.0.0] - 2025-11-29
+
+### Changed
+- [BREAKING CHANGE] Updated versioning system from `3x.x.x` to `3xy.x.x` format for unambiguous Dart SDK version mapping.
+
+### Removed
+- The `enable_null_safety` rule (removed in Dart 3.0).
+
 ## [38.1.0] - 2025-07-22
 
 ### Changed
