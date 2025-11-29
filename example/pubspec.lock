@@ -7,6 +7,6 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "307.0.0"
+    version: "308.0.0"
 sdks:
-  dart: ">=3.7.0 <4.0.0"
+  dart: ">=3.8.0 <4.0.0"
