@@ -10,23 +10,14 @@ Future<void> main() async {
 
     stdout.writeln('Lintorium version: $lintoriumVersion');
 
-    final (:minDartSdkVersion, :maxDartSdkVersion) = _getDartSdkVersions(
-      lintoriumVersion,
-    );
+    final (:minDartSdkVersion, :maxDartSdkVersion) = _getDartSdkVersions(lintoriumVersion);
 
     stdout.writeln('Dart SDK min version: $minDartSdkVersion');
     stdout.writeln('Dart SDK max version: $maxDartSdkVersion');
 
-    _switchDartVersion(minDartSdkVersion, maxDartSdkVersion);
-
-    final flutterSdkVersion = _getFlutterSdkVersion(minDartSdkVersion);
-
-    stdout.writeln('Flutter SDK version: $flutterSdkVersion');
-
-    await _switchFlutterVersion(flutterSdkVersion);
+    await _switchDartVersion(minDartSdkVersion, maxDartSdkVersion);
 
     await _runDartVersion();
-    await _runFlutterVersion();
 
     await _runPubGet();
 
@@ -83,34 +74,37 @@ Version _getLintoriumVersionFromPubspecFile() {
   return (minDartSdkVersion: minDartSdkVersion, maxDartSdkVersion: maxDartSdkVersion);
 }
 
-Version _getFlutterSdkVersion(Version dartSdkVersion) {
-  return switch (dartSdkVersion) {
-    Version(major: 3, minor: 0) => Version(3, 10, 0),
-    Version(major: 3, minor: 1) => Version(3, 13, 0),
-    Version(major: 3, minor: 2) => Version(3, 16, 0),
-    Version(major: 3, minor: 3) => Version(3, 19, 0),
-    Version(major: 3, minor: 4) => Version(3, 22, 0),
-    Version(major: 3, minor: 5) => Version(3, 24, 0),
-    Version(major: 3, minor: 6) => Version(3, 27, 0),
-    Version(major: 3, minor: 7) => Version(3, 29, 0),
-    Version(major: 3, minor: 8) => Version(3, 32, 0),
-    Version(major: 3, minor: 9) => Version(3, 35, 4),
-    Version(major: 3, minor: 10) => Version(3, 38, 2),
-    _ => throw Exception(
-        'No Flutter version mapping found for Dart $dartSdkVersion. '
-        'Please update _getFlutterSdkVersion method.',
-      ),
-  };
-}
-
-void _switchDartVersion(Version minDartSdkVersion, Version maxDartSdkVersion) {
+Future<void> _switchDartVersion(Version minDartSdkVersion, Version maxDartSdkVersion) async {
+  await _runMiseUse(minDartSdkVersion);
   _updateAnalysisOptionsFile(minDartSdkVersion.toString());
-  _updatePubspecYamlFile(File('${_getWorkspaceDir()}/pubspec.yaml'), minDartSdkVersion, maxDartSdkVersion);
+  _updatePubspecYamlFile(
+    File('${_getWorkspaceDir()}/pubspec.yaml'),
+    minDartSdkVersion,
+    maxDartSdkVersion,
+  );
+  _updatePubspecYamlFile(
+    File('${_getWorkspaceDir()}/cli/pubspec.yaml'),
+    minDartSdkVersion,
+    maxDartSdkVersion,
+  );
   _updatePubspecYamlFile(
     File('${_getWorkspaceDir()}/example/pubspec.yaml'),
     minDartSdkVersion,
     maxDartSdkVersion,
   );
+}
+
+Future<void> _runMiseUse(Version dartSdkVersion) async {
+  final version = '${dartSdkVersion.major}.${dartSdkVersion.minor}.${dartSdkVersion.patch}';
+
+  stdout.writeln();
+  stdout.writeln('> mise use dart@$version');
+
+  final exitCode = await _runProcess('mise', ['use', 'dart@$version'], _getWorkspaceDir());
+
+  if (exitCode != 0) {
+    throw Exception('Failed to run mise use dart@$version');
+  }
 }
 
 void _updateAnalysisOptionsFile(String dartVersion) {
@@ -156,28 +150,8 @@ void _updatePubspecYamlFile(File file, Version minDartSdkVersion, Version maxDar
   file.writeAsStringSync(updatedContent);
 }
 
-Future<void> _switchFlutterVersion(Version flutterSdkVersion) async {
-  final exitCode = await _runProcess(
-    'fvm',
-    ['use', flutterSdkVersion.toString()],
-    _getWorkspaceDir(),
-  );
-
-  if (exitCode != 0) {
-    throw Exception('Failed to switch Flutter version');
-  }
-}
-
-Future<int> _runProcess(
-  String executable,
-  List<String> arguments,
-  String workingDirectory,
-) async {
-  final process = await Process.start(
-    executable,
-    arguments,
-    workingDirectory: workingDirectory,
-  );
+Future<int> _runProcess(String executable, List<String> arguments, String workingDirectory) async {
+  final process = await Process.start(executable, arguments, workingDirectory: workingDirectory);
 
   final stdoutFuture = process.stdout.transform(utf8.decoder).forEach((data) {
     stdout.write(data);
@@ -193,42 +167,19 @@ Future<int> _runProcess(
 
 Future<void> _runDartVersion() async {
   stdout.writeln();
-  stdout.writeln('> fvm dart --version');
+  stdout.writeln('> dart --version');
 
-  await _runProcess(
-    'fvm',
-    ['dart', '--version'],
-    _getWorkspaceDir(),
-  );
-}
-
-Future<void> _runFlutterVersion() async {
-  stdout.writeln();
-  stdout.writeln('> fvm flutter --version');
-
-  await _runProcess(
-    'fvm',
-    ['flutter', '--version'],
-    _getWorkspaceDir(),
-  );
+  await _runProcess('mise', ['exec', '--', 'dart', '--version'], _getWorkspaceDir());
 }
 
 Future<void> _runPubGet() async {
-  final packages = [
-    _getWorkspaceDir(),
-    '${_getWorkspaceDir()}/cli',
-    '${_getWorkspaceDir()}/example',
-  ];
+  final packages = [_getWorkspaceDir(), '${_getWorkspaceDir()}/cli', '${_getWorkspaceDir()}/example'];
 
   for (final packageDir in packages) {
     stdout.writeln();
-    stdout.writeln('> fvm dart pub get (in $packageDir)');
+    stdout.writeln('> dart pub get (in $packageDir)');
 
-    final exitCode = await _runProcess(
-      'fvm',
-      ['dart', 'pub', 'get'],
-      packageDir,
-    );
+    final exitCode = await _runProcess('mise', ['exec', '--', 'dart', 'pub', 'get'], packageDir);
 
     if (exitCode != 0) {
       throw Exception('Failed to run pub get in $packageDir');

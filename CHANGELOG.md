@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [311.0.0] - 2026-02-13
+
+### Added
+- Enabled the `simplify_variable_pattern` rule with `warning` severity.
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.11.0`.
+- Marked the `avoid_null_checks_in_equality_operators` rule as deprecated in Dart 3.11.
+- Marked the `prefer_final_parameters` rule as deprecated in Dart 3.11.
+- Marked the `use_if_null_to_convert_nulls_to_bools` rule as deprecated in Dart 3.11.
+
 ## [310.0.0] - 2025-11-29
 
 ### Added
