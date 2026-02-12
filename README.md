@@ -37,6 +37,7 @@ The first digit of Lintorium's version number corresponds to the minimum require
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
+| >=3.11.0         | ✅ >=311.0.0       |
 | >=3.10.0         | ✅ >=310.0.0       |
 | >=3.9.0          | ✅ >=309.0.0       |
 | >=3.8.0          | ✅ >=308.0.0       |
