@@ -1,0 +1,5 @@
+[tools]
+dart = "3.11.0"
+
+[settings]
+quiet = true
