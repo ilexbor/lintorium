@@ -22,8 +22,8 @@ platforms:
   windows:
 
 topics:
-  - analysis-options
-  - analyzer-diagnostics
+  - analysis
+  - analyzer
   - code-style
-  - linter-rules
   - lints
+  - linter
