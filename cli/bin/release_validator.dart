@@ -26,7 +26,7 @@ String _getWorkspaceDir() {
 
 Future<void> _step1PubGet(Map<String, String> packages) async {
   stdout.writeln('=' * 60);
-  stdout.writeln('Step 1: Running `fvm dart pub get` in all packages');
+  stdout.writeln('Step 1: Running `dart pub get` in all packages');
   stdout.writeln('${'=' * 60}\n');
 
   for (final package in packages.entries) {
@@ -34,7 +34,7 @@ Future<void> _step1PubGet(Map<String, String> packages) async {
     final packagePath = package.value;
 
     stdout.write('📦 Running pub get in $packageName package ($packagePath)...');
-    final (exitCode, _) = await _runProcess('fvm', ['dart', 'pub', 'get'], packagePath);
+    final (exitCode, _) = await _runProcess('dart', ['pub', 'get'], packagePath);
 
     if (exitCode != 0) {
       stdout.writeln('\n❌ pub get failed in $packageName package. Aborting.');
@@ -52,8 +52,8 @@ Future<void> _step2AnalysisOptionsValidator(String workspaceDir) async {
 
   stdout.write('🔍 Validating analysis options...');
   final (exitCode, _) = await _runProcess(
-    'fvm',
-    ['dart', 'run', '$workspaceDir/cli/bin/analysis_options_validator.dart'],
+    'dart',
+    ['run', '$workspaceDir/cli/bin/analysis_options_validator.dart'],
     workspaceDir,
   );
 
@@ -105,7 +105,7 @@ Future<void> _step4Pana(String workspaceDir) async {
 
 Future<void> _step5DartPublishDryRun(String workspaceDir) async {
   stdout.writeln('=' * 60);
-  stdout.writeln('Step 5: Running fvm dart publish --dry-run');
+  stdout.writeln('Step 5: Running dart publish --dry-run');
   stdout.writeln('${'=' * 60}\n');
 
   stdout.writeln('📤 Running publish dry-run...');
@@ -148,11 +148,11 @@ Future<(int exitCode, String output)> _runProcess(
   return (exitCode, outputBuffer.toString());
 }
 
-/// Runs `fvm dart analyze` and returns true if no errors or warnings found.
+/// Runs `dart analyze` and returns true if no errors or warnings found.
 Future<bool> _runAnalyzer(String workingDirectory) async {
   final (exitCode, _) = await _runProcess(
-    'fvm',
-    ['dart', 'analyze', '--fatal-infos', '--fatal-warnings'],
+    'dart',
+    ['analyze', '--fatal-infos', '--fatal-warnings'],
     workingDirectory,
   );
 
@@ -163,7 +163,7 @@ Future<bool> _runAnalyzer(String workingDirectory) async {
 /// Returns true if pana score is satisfactory (no major issues).
 Future<bool> _runPana(String workingDirectory) async {
   // Check if pana is installed
-  final checkProcess = await Process.run('fvm', ['dart', 'pub', 'global', 'list']);
+  final checkProcess = await Process.run('dart', ['pub', 'global', 'list']);
   final globalPackages = checkProcess.stdout.toString();
 
   if (!globalPackages.contains('pana')) {
@@ -180,12 +180,9 @@ Future<bool> _runPana(String workingDirectory) async {
     }
   }
 
-  final flutterSdk = '$workingDirectory/.fvm/flutter_sdk';
-  final dartSdk = '$flutterSdk/bin/cache/dart-sdk';
-
   final (exitCode, output) = await _runProcess(
-    'fvm',
-    ['dart', 'pub', 'global', 'run', 'pana', '--flutter-sdk', flutterSdk, '--dart-sdk', dartSdk],
+    'dart',
+    ['pub', 'global', 'run', 'pana'],
     workingDirectory,
   );
 
@@ -202,11 +199,11 @@ Future<bool> _runPana(String workingDirectory) async {
   return true;
 }
 
-/// Runs `fvm dart pub publish --dry-run` and returns true if no issues found.
+/// Runs `dart pub publish --dry-run` and returns true if no issues found.
 Future<bool> _runPublishDryRun(String workingDirectory) async {
   final (exitCode, output) = await _runProcess(
-    'fvm',
-    ['dart', 'pub', 'publish', '--dry-run'],
+    'dart',
+    ['pub', 'publish', '--dry-run'],
     workingDirectory,
   );
 

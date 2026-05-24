@@ -9,8 +9,8 @@
 
 </div>
 
-The strictest linting rules for Dart code.
-Perfect for perfectionists, whether solo developers or entire teams striving for flawless code.
+A set of strict lint rules for Dart.
+While other packages tune the same rules differently per Dart SDK version, lintorium keeps every rule configured the same way across all supported SDKs simultaneously.
 
 ## Table of contents
 
@@ -37,6 +37,7 @@ The first digit of Lintorium's version number corresponds to the minimum require
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
+| >=3.12.0         | ✅ >=312.0.0       |
 | >=3.11.0         | ✅ >=311.0.0       |
 | >=3.10.0         | ✅ >=310.0.0       |
 | >=3.9.0          | ✅ >=309.0.0       |
@@ -58,17 +59,18 @@ When adding Lintorium to your project, it's highly recommended to use the greate
 ```yaml
 # pubspec.yaml
 dev_dependencies:
-  lintorium: >=300.0.0  # Replace with your required version
+  lintorium: ">=300.0.0"  # Replace with your required version
 ```
 
 This approach allows the `dart pub get` and `dart pub upgrade` commands to automatically select the latest Lintorium version that's compatible with your project's Dart SDK, ensuring you always get the latest rules optimized for your Dart SDK version.
 
 ### Active support for all Dart SDK versions
 
-Unlike many other linting packages, Lintorium actively maintains and supports rules for **all Dart SDK versions** starting from Dart SDK 3.0.0. This means:
-- Rules are continuously updated and optimized for each supported Dart SDK version
-- Improvements are applied across all supported versions
-- You can confidently use Lintorium regardless of your current Dart SDK version
+**What it means:** Lintorium ships a separate `analysis_options_dart_3_X_0.yaml` for every supported Dart SDK version, all carrying the same ruleset.
+
+**Why it matters:** other linting packages typically support only the latest SDK. With Lintorium, every Dart SDK from 3.0 up to the latest release gets identical lint coverage.
+
+**What you get:** the same rules and analyzer behavior across projects on different Dart SDK versions, so switching between them brings no surprises.
 
 ## Installation
 
@@ -217,30 +219,6 @@ analyzer:
 ```
 
 For details on customizing static analysis, check out the [official Dart documentation](https://dart.dev/tools/analysis).
-
-## Lintorium badges
-
-Use these badges to highlight your project's adherence to Lintorium's high standards of linting and code style.
-
-### Available badges
-
-Example:
-
-[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)  
-[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)
-
-Markdown:
-
-```markdown
-[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1)](https://pub.dev/packages/lintorium)
-[![](https://img.shields.io/badge/quality%20ensured%20by-lintorium-0553B1?style=for-the-badge)](https://pub.dev/packages/lintorium)
-```
-
-### How to add
-
-To include a badge in your project:
-1.	Copy the Markdown code snippet for the badge you want.
-2.	Paste it into your project’s README.md or documentation file where you want the badge to appear.
 
 ## Changelog
 
