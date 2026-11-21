@@ -21,7 +21,6 @@ While other packages tune the same rules differently per Dart SDK version, linto
   - [Excluding files and directories](#excluding-files-and-directories)
   - [Suppressing Rules](#suppressing-rules)
   - [Customizing the predefined lint sets](#customizing-the-predefined-lint-sets)
-- [Badges](#lintorium-badges)
 - [Changelog](#changelog)
 - [Issues](#issues)
 - [Contributing](#contributing)
@@ -33,10 +32,11 @@ Lintorium is fully compatible with both **Dart** and **Flutter** projects.
 
 ### Version correlation
 
-The first digit of Lintorium's version number corresponds to the minimum required Dart SDK version.
+The major version component of Lintorium's version number encodes the minimum required Dart SDK version. For example, Lintorium `313.x.y` requires Dart `3.13.0` or later.
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
+| >=3.13.0         | ✅ >=313.0.0       |
 | >=3.12.0         | ✅ >=312.0.0       |
 | >=3.11.0         | ✅ >=311.0.0       |
 | >=3.10.0         | ✅ >=310.0.0       |
@@ -62,7 +62,9 @@ dev_dependencies:
   lintorium: ">=300.0.0"  # Replace with your required version
 ```
 
-This approach allows the `dart pub get` and `dart pub upgrade` commands to automatically select the latest Lintorium version that's compatible with your project's Dart SDK, ensuring you always get the latest rules optimized for your Dart SDK version.
+This version range lets Pub select a Lintorium release compatible with your Dart SDK without changing the dependency constraint when you upgrade Dart.
+
+During normal development, run `dart pub get` to retrieve dependencies. It reuses the versions in `pubspec.lock` when they remain compatible. To select the latest compatible Lintorium release, use `dart pub upgrade lintorium`, including after upgrading Dart.
 
 ### Active support for all Dart SDK versions
 
@@ -77,8 +79,8 @@ This approach allows the `dart pub get` and `dart pub upgrade` commands to autom
 1. In a terminal, located at the root of your package, run this command:
 
    ```shell
-    dart pub add dev:lintorium
-    ```
+   dart pub add "dev:lintorium:>=300.0.0"
+   ```
 
 2. Create an `analysis_options.yaml` file in the root directory of your project (next to pubspec.yaml) and add the following line:
 
@@ -90,10 +92,12 @@ Now the Dart analyzer will use the rules from Lintorium.
 
 ## Upgrading to the latest lints
 
-To upgrade to the latest version of the lint set, run:
+To upgrade to the latest version compatible with your Dart SDK and other dependencies, including after upgrading Dart, run:
 ```shell
-dart pub add dev:lintorium
+dart pub upgrade lintorium
 ```
+
+This keeps the existing version constraint in `pubspec.yaml`.
 
 ## Usage
 
@@ -157,19 +161,6 @@ To suppress multiple rules, list them separated by commas:
 ```dart
 // ignore: avoid_print, avoid_dynamic_calls
 print(dynamicVariable.callMethod());
-```
-
-#### Ignoring rules for a block of code
-
-To suppress rules for a block of code, you can use ignore comments around the block:
-
-```dart
-// ignore: avoid_print
-void someFunction() {
-  print('This will not trigger a lint warning');
-}
-
-// Linting resumes here
 ```
 
 #### Suppressing rules for an entire file

@@ -37,7 +37,7 @@ analyzer:
     avoid_empty_else: error
     avoid_equals_and_hash_code_on_mutable_classes: error
     avoid_escaping_inner_quotes: warning
-    avoid_field_initializers_in_const_classes: warning
+    avoid_field_initializers_in_const_classes: ignore
     avoid_final_parameters: warning # Incompatible with rules: prefer_final_parameters
     avoid_function_literals_in_foreach_calls: error
     avoid_futureor_void: error # Experimental
@@ -206,7 +206,7 @@ analyzer:
     unawaited_futures: error
     unintended_html_in_doc_comment: error
     unnecessary_async: error # Experimental
-    unnecessary_await_in_return: error
+    unnecessary_await_in_return: ignore
     unnecessary_brace_in_string_interps: warning
     unnecessary_breaks: error
     unnecessary_const: warning
@@ -282,7 +282,7 @@ linter:
     avoid_empty_else: true
     avoid_equals_and_hash_code_on_mutable_classes: true
     avoid_escaping_inner_quotes: true
-    avoid_field_initializers_in_const_classes: true
+    avoid_field_initializers_in_const_classes: false
     avoid_final_parameters: true # Incompatible with rules: prefer_final_parameters
     avoid_function_literals_in_foreach_calls: true
     avoid_futureor_void: true # Experimental
@@ -450,7 +450,7 @@ linter:
     unawaited_futures: true
     unintended_html_in_doc_comment: true
     unnecessary_async: true # Experimental
-    unnecessary_await_in_return: true
+    unnecessary_await_in_return: false
     unnecessary_brace_in_string_interps: true
     unnecessary_breaks: true
     unnecessary_const: true

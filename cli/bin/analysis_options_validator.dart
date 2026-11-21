@@ -4,6 +4,8 @@ import 'package:collection/collection.dart';
 import 'package:yaml/yaml.dart';
 
 void main() {
+  final workspaceDir = _getWorkspaceDir();
+
   final files = [
     'lib/analysis_options_dart_3_0_0.yaml',
     'lib/analysis_options_dart_3_1_0.yaml',
@@ -18,12 +20,19 @@ void main() {
     'lib/analysis_options_dart_3_10_0.yaml',
     'lib/analysis_options_dart_3_11_0.yaml',
     'lib/analysis_options_dart_3_12_0.yaml',
-  ].map(File.new);
+    'lib/analysis_options_dart_3_13_0.yaml',
+  ].map((path) => File('$workspaceDir/$path'));
 
-  _processFiles(files);
+  exitCode = _processFiles(files) ? 0 : 1;
 }
 
-void _processFiles(Iterable<File> files) {
+String _getWorkspaceDir() {
+  return File(Platform.script.toFilePath()).absolute.parent.parent.parent.path;
+}
+
+bool _processFiles(Iterable<File> files) {
+  var result = true;
+
   for (final file in files) {
     stdout.writeln();
     stdout.writeln('Process file `${file.path}:');
@@ -32,8 +41,12 @@ void _processFiles(Iterable<File> files) {
 
     if (isFileValid) {
       stdout.writeln('✅ All checks passed');
+    } else {
+      result = false;
     }
   }
+
+  return result;
 }
 
 bool _processFile(File file) {
@@ -46,10 +59,16 @@ bool _processFile(File file) {
 
   isFileValid =
       isFileValid &&
-      _validateAnalyzerErrorsForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules);
+      _validateAnalyzerErrorsForMissingRules(
+        analyzerErrors: analyzerErrors,
+        linterRules: linterRules,
+      );
   isFileValid =
       isFileValid &&
-      _validateLinterRulesForMissingRules(analyzerErrors: analyzerErrors, linterRules: linterRules);
+      _validateLinterRulesForMissingRules(
+        analyzerErrors: analyzerErrors,
+        linterRules: linterRules,
+      );
 
   isFileValid = isFileValid && _validateAnalyzerErrorsAreSorted(analyzerErrors);
   isFileValid = isFileValid && _validateLinterRulesAreSorted(linterRules);
@@ -124,12 +143,16 @@ bool _validateAnalyzerErrorsForMissingRules({
 }) {
   var isValid = true;
 
-  final missingRules = analyzerErrors.where((rule) => !linterRules.contains(rule)).toList();
+  final missingRules = analyzerErrors
+      .where((rule) => !linterRules.contains(rule))
+      .toList();
 
   missingRules.remove('private_optional_parameter');
 
   if (missingRules.isNotEmpty) {
-    stdout.writeln('⚠️ The following rules from analyzer.errors are missing in linter.rules:');
+    stdout.writeln(
+      '⚠️ The following rules from analyzer.errors are missing in linter.rules:',
+    );
 
     for (final rule in missingRules) {
       stdout.writeln('- $rule');
@@ -147,10 +170,14 @@ bool _validateLinterRulesForMissingRules({
 }) {
   var isValid = true;
 
-  final missingRules = linterRules.where((rule) => !analyzerErrors.contains(rule)).toList();
+  final missingRules = linterRules
+      .where((rule) => !analyzerErrors.contains(rule))
+      .toList();
 
   if (missingRules.isNotEmpty) {
-    stdout.writeln('⚠️ The following rules from linter.rules are missing in analyzer.errors:');
+    stdout.writeln(
+      '⚠️ The following rules from linter.rules are missing in analyzer.errors:',
+    );
 
     for (final rule in missingRules) {
       stdout.writeln('- $rule');
@@ -169,7 +196,9 @@ bool _validateAnalyzerErrorsAreSorted(Iterable<String> analyzerErrors) {
   final isEquals = const ListEquality<String>().equals(original, sorted);
 
   if (!isEquals) {
-    stdout.writeln('⚠️ Rules in analyzer.errors are not sorted alphabetically:');
+    stdout.writeln(
+      '⚠️ Rules in analyzer.errors are not sorted alphabetically:',
+    );
 
     for (final rule in original) {
       stdout.writeln('- $rule');

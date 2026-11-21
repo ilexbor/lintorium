@@ -95,7 +95,7 @@ Future<void> _switchDartVersion(Version minDartSdkVersion, Version maxDartSdkVer
 }
 
 Future<void> _runMiseUse(Version dartSdkVersion) async {
-  final version = '${dartSdkVersion.major}.${dartSdkVersion.minor}.${dartSdkVersion.patch}';
+  final version = '${dartSdkVersion.major}.${dartSdkVersion.minor}';
 
   stdout.writeln();
   stdout.writeln('> mise use dart@$version');
@@ -162,7 +162,8 @@ Future<int> _runProcess(String executable, List<String> arguments, String workin
   });
 
   await Future.wait([stdoutFuture, stderrFuture]);
-  return process.exitCode;
+
+  return await process.exitCode;
 }
 
 Future<void> _runDartVersion() async {
