@@ -5,6 +5,128 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [314.0.0] - 2026-11-22
+
+### Added
+- Enabled the `future_sync_value` rule with `warning` severity.
+- Enabled the experimental `unnecessary_this_alias` rule with `warning` severity. In Dart 3.14, this check requires the `this-promotion` language experiment.
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.14.0` and switched the default analysis profile to Dart 3.14.
+
+## [313.0.0] - 2026-11-22
+
+### Added
+- Enabled the `async_return_with_no_await` rule with `error` severity.
+- Enabled the `no_dynamic_casts` rule with `error` severity.
+- Enabled the `no_raw_types` rule with `error` severity.
+- Enabled the `empty_container_bodies` rule with `warning` severity.
+- Enabled the `initialize_in_field_declaration` rule with `warning` severity.
+- Enabled the `migrate_design_widgets` rule with `warning` severity.
+- Enabled the `unnecessary_const_in_enum_constructor` rule with `warning` severity.
+- Enabled the `unnecessary_primary_constructor_body` rule with `warning` severity.
+- Enabled the `unnecessary_type_name_in_constructor` rule with `warning` severity.
+- Enabled the `use_declaring_parameters` rule with `warning` severity.
+- Added `use_primary_constructors` as a disabled rule.
+
+### Changed
+- [BREAKING CHANGE] Updated minimum Dart SDK version to `>=3.13.0` and switched the default analysis profile to Dart 3.13.
+- Replaced `strict-raw-types` with the `no_raw_types` lint, configured with `error` severity.
+- Marked `avoid_private_typedef_functions`, `one_member_abstracts`, and `unnecessary_await_in_return` as deprecated in Dart 3.13.
+
+## [312.1.0] - 2026-11-22
+
+### Added
+- [BREAKING CHANGE] Enabled the experimental `var_with_no_type_annotation` rule with `error` severity. Untyped parameters declared with `var` now produce an additional analysis error.
+- Added an explicit disabled setting for `remove_deprecations_in_breaking_versions`.
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+- Updated the status comments for `omit_obvious_local_variable_types`, `omit_obvious_property_types`, `specify_nonobvious_local_variable_types`, and `specify_nonobvious_property_types` to reflect their stable status.
+
+## [311.1.0] - 2026-11-22
+
+### Added
+- Added an explicit disabled setting for `remove_deprecations_in_breaking_versions`.
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+- Updated the status comments for `omit_obvious_local_variable_types`, `omit_obvious_property_types`, `specify_nonobvious_local_variable_types`, and `specify_nonobvious_property_types` to reflect their stable status.
+
+## [310.1.0] - 2026-11-22
+
+### Added
+- Added an explicit disabled setting for `remove_deprecations_in_breaking_versions`.
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [309.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [308.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [307.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [306.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [305.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [304.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [303.1.0] - 2026-11-22
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+
+## [302.1.0] - 2026-11-23
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+- Disabled `iterable_contains_unrelated_type` and `list_remove_unrelated_type` to avoid duplicate diagnostics. Their replacement, `collection_methods_unrelated_type`, remains enabled with `error` severity.
+
+## [301.1.0] - 2026-11-23
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+- Disabled `iterable_contains_unrelated_type` and `list_remove_unrelated_type` to avoid duplicate diagnostics. Their replacement, `collection_methods_unrelated_type`, remains enabled with `error` severity.
+
+## [300.1.0] - 2026-11-23
+
+### Changed
+- Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
+- Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
+- Disabled `iterable_contains_unrelated_type` and `list_remove_unrelated_type` to avoid duplicate diagnostics. Their replacement, `collection_methods_unrelated_type`, remains enabled with `error` severity.
+
 ## [312.0.0] - 2026-05-24
 
 ### Added
