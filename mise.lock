@@ -3,34 +3,34 @@
 lockfile_version = 4
 
 [[tools.dart]]
-version = "3.9.4"
+version = "3.8.3"
 backend = "http:dart"
-specifiers = ["3.9"]
+specifiers = ["3.8"]
 
 [tools.dart."platforms.linux-arm64"]
-checksum = "sha256:21790958b6c65cb57a1a3c3fb508f44ddcfb77b822a090039ee47e583fcde0e8"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-arm64-release.zip"
+checksum = "sha256:2396d820adbd3bd15f334cdb1aefbbc32f473d1fdf06315af122dcd7c7269671"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-linux-arm64-release.zip"
 
 [tools.dart."platforms.linux-arm64-musl"]
-checksum = "sha256:21790958b6c65cb57a1a3c3fb508f44ddcfb77b822a090039ee47e583fcde0e8"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-arm64-release.zip"
+checksum = "sha256:2396d820adbd3bd15f334cdb1aefbbc32f473d1fdf06315af122dcd7c7269671"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-linux-arm64-release.zip"
 
 [tools.dart."platforms.linux-x64"]
-checksum = "sha256:61b4b9488e1b4255b94be17ad48ae2ddb23c6fbe67824cf8103d0b28fa8ab816"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-x64-release.zip"
+checksum = "sha256:008cefb88505760ae514062d576255305c2bcba40b0f9b7c70fd524d786d122d"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-linux-x64-release.zip"
 
 [tools.dart."platforms.linux-x64-musl"]
-checksum = "sha256:61b4b9488e1b4255b94be17ad48ae2ddb23c6fbe67824cf8103d0b28fa8ab816"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-linux-x64-release.zip"
+checksum = "sha256:008cefb88505760ae514062d576255305c2bcba40b0f9b7c70fd524d786d122d"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-linux-x64-release.zip"
 
 [tools.dart."platforms.macos-arm64"]
-checksum = "sha256:da0aa7f35e94b2ff25ebd42b7c9b21d430aee658e26da05f6509f84e15019480"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-macos-arm64-release.zip"
+checksum = "sha256:74bd98cd8c4aaa049bb616886a18237b66663e045c3934a01d7ca04816c0733b"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-macos-arm64-release.zip"
 
 [tools.dart."platforms.macos-x64"]
-checksum = "sha256:f27906d6150f9f4077af9c7106718c8e039aeba031dcb42056a331fb74e3dd2f"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-macos-x64-release.zip"
+checksum = "sha256:4ac0ea9c9e68c1ecdd1a0df9202a48b5e0a76105e0e8551fdfc60daa4d4b0174"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-macos-x64-release.zip"
 
 [tools.dart."platforms.windows-x64"]
-checksum = "sha256:d93e23a5ee0d5d4422e38b2eac9078f42ab44ba89ee659bb0a454719b576b284"
-url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.9.4/sdk/dartsdk-windows-x64-release.zip"
+checksum = "sha256:533958288cbfae2668699348135c912891981f5c387ecac1704a02bc86932f33"
+url = "https://storage.googleapis.com/dart-archive/channels/stable/release/3.8.3/sdk/dartsdk-windows-x64-release.zip"
