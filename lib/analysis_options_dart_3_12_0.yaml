@@ -104,7 +104,7 @@ analyzer:
     implicit_reopen: ignore
     invalid_case_patterns: error
     invalid_runtime_check_with_js_interop_types: error
-    # iterable_contains_unrelated_type: error # Removed in Dart 3.3.0
+    # iterable_contains_unrelated_type: error # Removed in Dart 3.3.0. Replaced by collection_methods_unrelated_type
     join_return_with_assignment: ignore
     leading_newlines_in_multiline_strings: error
     library_annotations: error
@@ -112,7 +112,7 @@ analyzer:
     library_prefixes: error
     library_private_types_in_public_api: error
     lines_longer_than_80_chars: ignore
-    # list_remove_unrelated_type: error # Removed in Dart 3.3.0
+    # list_remove_unrelated_type: error # Removed in Dart 3.3.0. Replaced by collection_methods_unrelated_type
     literal_only_boolean_expressions: warning
     matching_super_parameters: warning
     missing_code_block_language_in_doc_comment: warning
@@ -184,6 +184,7 @@ analyzer:
     provide_deprecation_message: warning
     public_member_api_docs: ignore
     recursive_getters: error
+    remove_deprecations_in_breaking_versions: ignore
     require_trailing_commas: warning
     secure_pubspec_urls: warning
     simple_directive_paths: warning
@@ -262,6 +263,7 @@ analyzer:
     use_to_and_as_if_applicable: error
     use_truncating_division: warning
     valid_regexps: error
+    var_with_no_type_annotation: error # Experimental
     void_checks: error
 
 linter:
@@ -351,7 +353,7 @@ linter:
     implicit_reopen: false
     invalid_case_patterns: true
     invalid_runtime_check_with_js_interop_types: true
-    # iterable_contains_unrelated_type: true # Removed in Dart 3.3.0
+    # iterable_contains_unrelated_type: true # Removed in Dart 3.3.0. Replaced by collection_methods_unrelated_type
     join_return_with_assignment: false
     leading_newlines_in_multiline_strings: true
     library_annotations: true
@@ -359,7 +361,7 @@ linter:
     library_prefixes: true
     library_private_types_in_public_api: true
     lines_longer_than_80_chars: false
-    # list_remove_unrelated_type: true # Removed in Dart 3.3.0
+    # list_remove_unrelated_type: true # Removed in Dart 3.3.0. Replaced by collection_methods_unrelated_type
     literal_only_boolean_expressions: true
     matching_super_parameters: true
     missing_code_block_language_in_doc_comment: true
@@ -430,6 +432,7 @@ linter:
     provide_deprecation_message: true
     public_member_api_docs: false
     recursive_getters: true
+    remove_deprecations_in_breaking_versions: false
     require_trailing_commas: true
     secure_pubspec_urls: true
     simple_directive_paths: true
@@ -508,4 +511,5 @@ linter:
     use_to_and_as_if_applicable: true
     use_truncating_division: true
     valid_regexps: true
+    var_with_no_type_annotation: true # Experimental
     void_checks: true

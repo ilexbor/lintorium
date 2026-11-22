@@ -1,5 +1,2 @@
 [tools]
-dart = "3.13"
-
-[settings]
-quiet = true
+dart = "3.14"

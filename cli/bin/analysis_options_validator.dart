@@ -21,6 +21,7 @@ void main() {
     'lib/analysis_options_dart_3_11_0.yaml',
     'lib/analysis_options_dart_3_12_0.yaml',
     'lib/analysis_options_dart_3_13_0.yaml',
+    'lib/analysis_options_dart_3_14_0.yaml',
   ].map((path) => File('$workspaceDir/$path'));
 
   exitCode = _processFiles(files) ? 0 : 1;

@@ -32,10 +32,11 @@ Lintorium is fully compatible with both **Dart** and **Flutter** projects.
 
 ### Version correlation
 
-The major version component of Lintorium's version number encodes the minimum required Dart SDK version. For example, Lintorium `313.x.y` requires Dart `3.13.0` or later.
+The major version component of Lintorium's version number encodes the minimum required Dart SDK version. For example, Lintorium `314.x.y` requires Dart `3.14.0` or later.
 
 | Dart SDK version | Lintorium version |
 |------------------|-------------------|
+| >=3.14.0         | ✅ >=314.0.0       |
 | >=3.13.0         | ✅ >=313.0.0       |
 | >=3.12.0         | ✅ >=312.0.0       |
 | >=3.11.0         | ✅ >=311.0.0       |
