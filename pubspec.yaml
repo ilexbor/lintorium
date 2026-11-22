@@ -1,6 +1,6 @@
 name: lintorium
 
-version: '314.0.0'
+version: '313.0.0'
 
 license: 'BSD-3-Clause'
 
@@ -11,7 +11,7 @@ repository: https://github.com/ilexbor/lintorium
 issue_tracker: https://github.com/ilexbor/lintorium/issues
 
 environment:
-  sdk: '>=3.14.0 <4.0.0'
+  sdk: '>=3.13.0 <4.0.0'
 
 platforms:
   android:
