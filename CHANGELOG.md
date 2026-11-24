@@ -106,21 +106,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
 - Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
 
-## [302.1.0] - 2026-11-23
+## [302.1.0] - 2026-11-24
 
 ### Changed
 - Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
 - Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
 - Disabled `iterable_contains_unrelated_type` and `list_remove_unrelated_type` to avoid duplicate diagnostics. Their replacement, `collection_methods_unrelated_type`, remains enabled with `error` severity.
 
-## [301.1.0] - 2026-11-23
+## [301.1.0] - 2026-11-24
 
 ### Changed
 - Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
 - Disabled the `unnecessary_await_in_return` rule (previously `error`) to keep shared rule settings consistent across supported SDKs.
 - Disabled `iterable_contains_unrelated_type` and `list_remove_unrelated_type` to avoid duplicate diagnostics. Their replacement, `collection_methods_unrelated_type`, remains enabled with `error` severity.
 
-## [300.1.0] - 2026-11-23
+## [300.1.0] - 2026-11-24
 
 ### Changed
 - Disabled the `avoid_field_initializers_in_const_classes` rule (previously `warning`) to keep shared rule settings consistent across supported SDKs.
